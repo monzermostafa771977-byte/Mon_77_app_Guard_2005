@@ -13,12 +13,12 @@
         .modal { display: none; }
         .modal.active { display: flex; }
         .cyber-glass {
-            background: rgba(15, 23, 42, 0.75);
+            background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .shield-glow {
-            box-shadow: 0 0 25px rgba(239, 68, 68, 0.35);
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
         }
     </style>
 </head>
@@ -28,13 +28,12 @@
     <header class="cyber-glass sticky top-0 z-50 p-4 border-b border-slate-800/80">
         <div class="max-w-md mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-3 space-x-reverse">
-                <!-- أيقونة التطبيق الاحترافية الجديدة المصممة بعناية -->
                 <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-red-600 via-rose-500 to-amber-500 flex items-center justify-center shield-glow transform transition-transform hover:scale-105">
                     <i class="fa-solid fa-shield-heart text-2xl text-white"></i>
                 </div>
                 <div>
                     <h1 class="font-black text-base tracking-wide bg-gradient-to-r from-emerald-400 to-teal-200 bg-clip-text text-transparent">Monzer Hares Guard</h1>
-                    <span class="text-[11px] text-slate-400 font-medium">حارس المنذر للمجتمع الرقمي</span>
+                    <span class="text-[11px] text-slate-400 font-medium">منظومة الحماية المجتمعية</span>
                 </div>
             </div>
             <!-- زر التثبيت والتفعيل المباشر -->
@@ -54,8 +53,8 @@
                     <i class="fa-solid fa-circle-check text-xl"></i>
                 </div>
                 <div>
-                    <h3 class="font-bold text-xs text-emerald-300">نظام PWA مفعل وجاهز</h3>
-                    <p class="text-[10px] text-emerald-400/80">انقر هنا لتثبيت التطبيق مباشرة على هاتفك</p>
+                    <h3 class="font-bold text-xs text-emerald-300">نظام PWA جاهز للتثبيت</h3>
+                    <p class="text-[10px] text-emerald-400/80">انقر هنا لتثبيت التطبيق على هاتفك</p>
                 </div>
             </div>
             <button id="cardInstallBtn" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl shadow-lg transition-all">
@@ -63,7 +62,7 @@
             </button>
         </div>
 
-        <!-- بطاقة الدرع الرئيسي برؤية بصرية مبهرة -->
+        <!-- بطاقة الدرع الرئيسي -->
         <div class="cyber-glass border border-slate-800 rounded-3xl p-6 shadow-2xl text-center space-y-4 relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-36 h-36 bg-red-600/10 rounded-full blur-3xl"></div>
             <div class="w-20 h-20 bg-gradient-to-tr from-emerald-500/20 to-teal-500/10 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto border border-emerald-500/30 shadow-inner">
@@ -168,22 +167,21 @@
                 <button class="closeModal text-slate-400 hover:text-white p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             <p class="text-xs text-slate-300 leading-relaxed">
-                لتثبيت التطبيق فوراً كأي تطبيق أندرويد رسمية:<br><br>
+                لتثبيت التطبيق فوراً كأي تطبيق أندرويد رسمي:<br><br>
                 1. اضغط على خيارات المتصفح (<b class="text-white">النقاط الثلاث</b> في أعلى الزاوية اليمنى لمتصفحك).<br><br>
                 2. اختر: <b class="text-emerald-400">"تثبيت التطبيق" (Install App)</b> أو <b class="text-emerald-400">"الإضافة إلى الشاشة الرئيسية"</b>.<br><br>
                 3. اضغط تأكيد، وسينزل التطبيق بأيقونته الرسمية على شاشة هاتفك!
             </p>
-            <button class="closeModal w-full py-2.5 bg-red-600 hover:bg-red-500 rounded-xl text-xs font-bold text-white shadow">تم التثبيت</button>
+            <button class="closeModal w-full py-2.5 bg-red-600 hover:bg-red-500 rounded-xl text-xs font-bold text-white shadow">فهمت، شكراً</button>
         </div>
     </div>
 
     <!-- JavaScript متكامل ومسجل لـ Service Worker -->
     <script>
-        // تسجيل الـ Service Worker لتجهيز التطبيق كـ PWA حقيقي
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js').then(function(reg) {
-                    console.log('ServiceWorker registered successfully: ', reg.scope);
+                navigator.serviceWorker.register('sw.js', { scope: './' }).then(function(reg) {
+                    console.log('ServiceWorker registered with scope: ', reg.scope);
                 }).catch(function(err) {
                     console.log('ServiceWorker registration failed: ', err);
                 });

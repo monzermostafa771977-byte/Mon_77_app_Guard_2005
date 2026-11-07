@@ -1,17 +1,30 @@
-// Service Worker لتخزين ملفات التطبيق وتوفير تثبيت PWA حقيقي 100%
-const CACHE_NAME = 'monzer-hares-v1';
+// Service Worker لتخزين ملفات التطبيق وتوفير تثبيت PWA حقيقي
+const CACHE_NAME = 'monzer-hares-v2';
 const urlsToCache = [
   './',
   './index.html',
-  './manifest.json',
-  'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+  './manifest.json'
 ];
 
 self.addEventListener('install', event => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => cache.addAll(urlsToCache))
+  );
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cache => {
+          if (cache !== CACHE_NAME) {
+            return caches.delete(cache);
+          }
+        })
+      );
+    }).then(() => self.clients.claim())
   );
 });
 

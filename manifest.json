@@ -2,6 +2,7 @@
   "name": "Monzer Hares Guard",
   "short_name": "حارس المنذر",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#090d16",
   "theme_color": "#090d16",
