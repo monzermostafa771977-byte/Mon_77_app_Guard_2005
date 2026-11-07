@@ -6,6 +6,8 @@
     <title>Monzer Hares Guard - النسخة المجتمعية الشاملة</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#020617">
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans">
     
@@ -21,15 +23,32 @@
                     <span class="text-xs text-slate-400">منظومة الحماية المجتمعية الشاملة</span>
                 </div>
             </div>
-            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-950 text-emerald-400 border border-emerald-800 animate-pulse">
-                حماية شاملة
-            </span>
+            <!-- زر التثبيت المباشر الظاهر والمفعل دائماً -->
+            <button id="installBtn" onclick="triggerInstall()" class="px-3 py-1.5 rounded-full text-xs font-bold bg-red-600 text-white shadow-lg hover:bg-red-700 transition-all flex items-center space-x-1 space-x-reverse animate-pulse">
+                <i class="fa-solid fa-download ml-1"></i> تثبيت التطبيق
+            </button>
         </div>
     </header>
 
     <!-- المحتوى الرئيسي -->
     <main class="max-w-md mx-auto p-4 space-y-5 pb-20">
         
+        <!-- بطاقة حالة التفعيل والتثبيت -->
+        <div id="statusCard" class="bg-emerald-950/40 border border-emerald-800/60 rounded-2xl p-4 flex items-center justify-between shadow-lg">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow">
+                    <i class="fa-solid fa-circle-check text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xs text-emerald-300">درع الحماية جاهز للتفعيل</h3>
+                    <p class="text-[10px] text-emerald-400/80">انقر على "تثبيت التطبيق" بالأعلى لإضافته لهاتفك</p>
+                </div>
+            </div>
+            <button onclick="triggerInstall()" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg shadow">
+                تفعيل
+            </button>
+        </div>
+
         <!-- بطاقة الدرع الرئيسي -->
         <div class="bg-gradient-to-br from-slate-900 to-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl text-center space-y-3 relative overflow-hidden">
             <div class="absolute top-0 right-0 w-28 h-28 bg-emerald-500/5 rounded-full blur-2xl"></div>
@@ -141,6 +160,30 @@
             } else {
                 res.className = "text-xs p-2.5 rounded-xl border font-semibold bg-emerald-950/80 text-emerald-400 border-emerald-800";
                 res.innerText = "✅ الرابط آمن وخالٍ من المحتوى الضار.";
+            }
+        }
+
+        // البرمجة المطورة لزر التثبيت والتفعيل المباشر
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+
+        async function triggerInstall() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    alert('🎉 تم تثبيت تطبيق Monzer Hares Guard بنجاح على شاشة هاتفك!');
+                }
+                deferredPrompt = null;
+            } else {
+                // تعليمات واضحة للمستخدم في حال فتح الموقع من المتصفح مباشرة أو محلياً
+                alert('📲 للتثبيت على هاتفك فوراً:
+1. من متصفح كروم اضغط على القائمة (الثلاث نقاط بالاقتراح/الأعلى).
+2. اختر "الإضافة إلى الشاشة الرئيسية" (Add to Home screen) أو "تثبيت التطبيق".');
             }
         }
     </script>
