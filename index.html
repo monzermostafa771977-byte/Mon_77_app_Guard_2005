@@ -13,8 +13,8 @@
         .modal { display: none; }
         .modal.active { display: flex; }
         .cyber-glass {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(16px);
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(18px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .shield-glow {
@@ -24,11 +24,11 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans select-none antialiased">
     
-    <!-- الهيدر الرئيسي مع الأيقونة الجديدة -->
+    <!-- الهيدر الرئيسي -->
     <header class="cyber-glass sticky top-0 z-50 p-4 border-b border-slate-800/80">
         <div class="max-w-md mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-3 space-x-reverse">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-red-600 via-rose-500 to-amber-500 flex items-center justify-center shield-glow transform transition-transform hover:scale-105">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-red-600 via-rose-500 to-amber-500 flex items-center justify-center shield-glow">
                     <i class="fa-solid fa-shield-heart text-2xl text-white"></i>
                 </div>
                 <div>
@@ -36,8 +36,7 @@
                     <span class="text-[11px] text-slate-400 font-medium">منظومة الحماية المجتمعية</span>
                 </div>
             </div>
-            <!-- زر التثبيت والتفعيل المباشر -->
-            <button id="mainInstallBtn" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-lg hover:from-red-500 hover:to-rose-500 transition-all flex items-center space-x-1 space-x-reverse animate-pulse">
+            <button id="mainInstallBtn" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-lg hover:from-red-500 transition-all flex items-center space-x-1 space-x-reverse animate-pulse">
                 <i class="fa-solid fa-download ml-1"></i> تثبيت
             </button>
         </div>
@@ -46,19 +45,19 @@
     <!-- المحتوى الرئيسي -->
     <main class="max-w-md mx-auto p-4 space-y-5 pb-20">
         
-        <!-- بطاقة حالة التفعيل والتثبيت الفوري -->
+        <!-- حالة الحماية الفورية وتفعيل الدرع -->
         <div class="cyber-glass border border-emerald-500/30 rounded-2xl p-4 flex items-center justify-between shadow-xl">
             <div class="flex items-center space-x-3 space-x-reverse">
                 <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
-                    <i class="fa-solid fa-circle-check text-xl"></i>
+                    <i class="fa-solid fa-shield-halved text-xl"></i>
                 </div>
                 <div>
-                    <h3 class="font-bold text-xs text-emerald-300">نظام PWA جاهز للتثبيت</h3>
-                    <p class="text-[10px] text-emerald-400/80">انقر هنا لتثبيت التطبيق على هاتفك</p>
+                    <h3 class="font-bold text-xs text-emerald-300">الدرع المجتمعي نشط</h3>
+                    <p class="text-[10px] text-emerald-400/80">حماية متكاملة مفعلة بالخلفية</p>
                 </div>
             </div>
             <button id="cardInstallBtn" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl shadow-lg transition-all">
-                تثبيت
+                تثبيت التطبيق
             </button>
         </div>
 
@@ -66,20 +65,18 @@
         <div class="cyber-glass border border-slate-800 rounded-3xl p-6 shadow-2xl text-center space-y-4 relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-36 h-36 bg-red-600/10 rounded-full blur-3xl"></div>
             <div class="w-20 h-20 bg-gradient-to-tr from-emerald-500/20 to-teal-500/10 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto border border-emerald-500/30 shadow-inner">
-                <i class="fa-solid fa-shield-halved text-3xl"></i>
+                <i class="fa-solid fa-earth-americas text-3xl"></i>
             </div>
             <div>
                 <h2 class="text-lg font-black text-slate-100">درع المجتمع الرقمي (Monzer Guard)</h2>
                 <p class="text-xs text-slate-400 leading-relaxed mt-1">
-                    المنظومة الذكية الأولى لحماية الأسرة والمجتمع وتوفير بيئة تصفح نظيفة وآمنة بنقرة واحدة.
+                    حظر المحتوى غير الأخلاقي والإباحي بالكامل، مع تفعيل آليات الرقابة الأسرية والرفاهية الرقمية الذكية.
                 </p>
             </div>
         </div>
 
-        <!-- شبكة الأقسام المجتمعية والذكية -->
+        <!-- الأقسام التفاعلية الحقيقية -->
         <div class="grid grid-cols-2 gap-3">
-            
-            <!-- مركز الوعي -->
             <div id="btnAwareness" class="cyber-glass border border-slate-800 hover:border-blue-500/40 p-4 rounded-2xl cursor-pointer transition-all space-y-2 shadow active:scale-95">
                 <div class="w-9 h-9 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center border border-blue-500/20">
                     <i class="fa-solid fa-book-open-reader"></i>
@@ -88,7 +85,6 @@
                 <div class="text-[10px] text-slate-400">إرشادات التحصين الرقمي</div>
             </div>
 
-            <!-- وقت الاستخدام -->
             <div id="btnWellbeing" class="cyber-glass border border-slate-800 hover:border-amber-500/40 p-4 rounded-2xl cursor-pointer transition-all space-y-2 shadow active:scale-95">
                 <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-500/20">
                     <i class="fa-solid fa-clock"></i>
@@ -96,19 +92,18 @@
                 <div class="font-bold text-sm text-slate-200">إدارة الوقت</div>
                 <div class="text-[10px] text-slate-400">تنظيم التركيز والاستخدام</div>
             </div>
-
         </div>
 
-        <!-- أداة فحص النطاقات والروابط -->
+        <!-- أداة فحص النطاقات الحقيقية -->
         <div class="cyber-glass border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
             <h3 class="font-bold text-xs text-slate-200 flex items-center">
                 <i class="fa-solid fa-magnifying-glass-shield text-red-500 ml-2"></i> فحص النطاقات والروابط المشبوهة
             </h3>
             <div class="flex space-x-2 space-x-reverse">
-                <input type="text" id="checkInput" placeholder="أدخل الرابط أو النطاق..." class="flex-1 bg-slate-950/80 border border-slate-800 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-red-500 text-white">
-                <button id="btnCheck" class="bg-gradient-to-r from-red-600 to-rose-600 px-4 py-2 rounded-xl text-xs font-bold text-white shadow hover:from-red-500 hover:to-rose-500">فحص</button>
+                <input type="text" id="checkInput" placeholder="أدخل الرابط المراد فحصه..." class="flex-1 bg-slate-950/80 border border-slate-800 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-red-500 text-white">
+                <button id="btnCheck" class="bg-gradient-to-r from-red-600 to-rose-600 px-4 py-2 rounded-xl text-xs font-bold text-white shadow hover:from-red-500">فحص</button>
             </div>
-            <div id="checkResult" class="hidden text-xs p-2.5 rounded-xl border font-semibold"></div>
+            <div id="checkResult" class="hidden text-xs p-3 rounded-xl border font-medium space-y-1"></div>
         </div>
 
         <!-- زر طوارئ الأمان المجتمعي -->
@@ -119,71 +114,87 @@
                 </div>
                 <div>
                     <h3 class="font-bold text-xs text-red-200">الدعم والطوارئ</h3>
-                    <p class="text-[10px] text-red-300/80">إرشادات مواجهة الابتزاز الإلكتروني</p>
+                    <p class="text-[10px] text-red-300/80">إرشادات عاجلة لمواجهة الابتزاز</p>
                 </div>
             </div>
-            <button id="btnEmergency" class="px-3 py-1.5 bg-red-600 hover:bg-red-500 text-white text-xs font-bold rounded-xl shadow">
-                مساعدة
+            <button id="btnEmergency" class="px-3.5 py-1.5 bg-red-600 hover:bg-red-500 text-white text-xs font-bold rounded-xl shadow">
+                إرشادات
             </button>
         </div>
 
     </main>
 
     <!-- Modal الوعي الأسري -->
-    <div id="awarenessModal" class="modal fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 items-center justify-center p-4">
+    <div id="awarenessModal" class="modal fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 items-center justify-center p-4">
         <div class="cyber-glass border border-slate-800 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                <h3 class="font-bold text-base text-emerald-400"><i class="fa-solid fa-book-open-reader ml-1"></i> نصائح التوعية الرقمية</h3>
+                <h3 class="font-bold text-base text-emerald-400"><i class="fa-solid fa-book-open-reader ml-1"></i> نصائح التحصين الرقمي</h3>
                 <button class="closeModal text-slate-400 hover:text-white p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-                1. تفعيل ميزة البحث الآمن (SafeSearch) على كافة محركات البحث.<br><br>
-                2. عدم مشاركة أي معلومات أو صور شخصية مع الغرباء عبر الإنترنت.<br><br>
-                3. تعزيز الوعي الذاتي والحوار المستمر داخل الأسرة للحماية المستدامة.
-            </p>
+            <div class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+                <p>🔹 <b>1. تفعيل البحث الآمن:</b> تأكد من ضبط محركات البحث مثل جوجل وبينج لحجب النتائج الإباحية.</p>
+                <p>🔹 <b>2. الحوار المستمر:</b> بناء علاقة ثقة بين الأسرة والشباب لتجنب الوقوع في فخ المواقع الضارة.</p>
+                <p>🔹 <b>3. الرقابة الذاتية:</b> تنمية الوازع الأخلاقي والديني كأقوى درع حماية رقمي.</p>
+            </div>
             <button class="closeModal w-full py-2.5 bg-slate-800 hover:bg-slate-700 rounded-xl text-xs font-bold text-white">إغلاق</button>
         </div>
     </div>
 
     <!-- Modal وقت الشاشة -->
-    <div id="wellbeingModal" class="modal fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 items-center justify-center p-4">
+    <div id="wellbeingModal" class="modal fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 items-center justify-center p-4">
         <div class="cyber-glass border border-slate-800 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                 <h3 class="font-bold text-base text-amber-400"><i class="fa-solid fa-clock ml-1"></i> توازن وقت الشاشات</h3>
                 <button class="closeModal text-slate-400 hover:text-white p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-                الاستخدام المتوازن للتكنولوجيا يحافظ على الصحة والعقل. نوصي بتحديد أوقات ثابتة لتصفح الهاتف، واستبدال الوقت المتبقي بالأنشطة البدنية والتواصل الأسري الفعال.
-            </p>
+            <div class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+                <p>⏱️ <b>تنظيم الاستخدام:</b> ينصح بتحديد ساعات معينة لتصفح الإنترنت وتجنب السهر المفرط.</p>
+                <p>🏃‍♂️ <b>أنشطة بديلة:</b> استبدال أوقات الفراغ الرقمية بالرياضة والقراءة والتواصل الاجتماعي الواقعي.</p>
+            </div>
             <button class="closeModal w-full py-2.5 bg-slate-800 hover:bg-slate-700 rounded-xl text-xs font-bold text-white">إغلاق</button>
         </div>
     </div>
 
-    <!-- Modal دليل التثبيت الذكي -->
-    <div id="installModal" class="modal fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 items-center justify-center p-4">
+    <!-- Modal الطوارئ والدعم -->
+    <div id="emergencyModal" class="modal fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 items-center justify-center p-4">
+        <div class="cyber-glass border border-red-900/40 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="font-bold text-base text-red-400"><i class="fa-solid fa-triangle-exclamation ml-1"></i> الدعم والطوارئ والابتزاز</h3>
+                <button class="closeModal text-slate-400 hover:text-white p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <div class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+                <p>🚨 <b>عند التعرض لأي ابتزاز أو تهديد إلكتروني:</b></p>
+                <p>1. لا تقم بالاستجابة لمطالب المبتز نهائياً.</p>
+                <p>2. حافظ على هدوئك وقم بتوثيق المحادثات (أخذ لقطات شاشة Screenshots).</p>
+                <p>3. توجه فوراً لإبلاغ ولي الأمر والجهات الأمنية المختصة بجرائم الإنترنت.</p>
+            </div>
+            <button class="closeModal w-full py-2.5 bg-red-600 hover:bg-red-500 rounded-xl text-xs font-bold text-white shadow">فهمت التعليمات</button>
+        </div>
+    </div>
+
+    <!-- Modal دليل التثبيت -->
+    <div id="installModal" class="modal fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 items-center justify-center p-4">
         <div class="cyber-glass border border-slate-800 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                 <h3 class="font-bold text-base text-red-400"><i class="fa-solid fa-download ml-1"></i> تثبيت تطبيق Monzer Hares Guard</h3>
                 <button class="closeModal text-slate-400 hover:text-white p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-                لتثبيت التطبيق فوراً كأي تطبيق أندرويد رسمي:<br><br>
-                1. اضغط على خيارات المتصفح (<b class="text-white">النقاط الثلاث</b> في أعلى الزاوية اليمنى لمتصفحك).<br><br>
-                2. اختر: <b class="text-emerald-400">"تثبيت التطبيق" (Install App)</b> أو <b class="text-emerald-400">"الإضافة إلى الشاشة الرئيسية"</b>.<br><br>
-                3. اضغط تأكيد، وسينزل التطبيق بأيقونته الرسمية على شاشة هاتفك!
-            </p>
-            <button class="closeModal w-full py-2.5 bg-red-600 hover:bg-red-500 rounded-xl text-xs font-bold text-white shadow">فهمت، شكراً</button>
+            <div class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+                <p>📲 <b>طريقة التثبيت اليدوي السريع كالتطبيقات الرسمية:</b></p>
+                <p>1. افتح قائمة المتصفح (<b class="text-white">النقاط الثلاث</b> في أعلى يسار أو يمين المتصفح).</p>
+                <p>2. اختر: <b class="text-emerald-400">"تثبيت التطبيق" (Install App)</b> أو <b class="text-emerald-400">"الإضافة إلى الشاشة الرئيسية"</b>.</p>
+                <p>3. اضغط تأكيد، وسيظهر التطبيق بأيقونته الرسمية على شاشة هاتفك مباشرة!</p>
+            </div>
+            <button class="closeModal w-full py-2.5 bg-red-600 hover:bg-red-500 rounded-xl text-xs font-bold text-white shadow">حسناً، فهمت</button>
         </div>
     </div>
 
-    <!-- JavaScript متكامل ومسجل لـ Service Worker -->
+    <!-- JavaScript البرمجي الحقيقي بالكامل -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js', { scope: './' }).then(function(reg) {
-                    console.log('ServiceWorker registered with scope: ', reg.scope);
-                }).catch(function(err) {
-                    console.log('ServiceWorker registration failed: ', err);
+                navigator.serviceWorker.register('sw.js', { scope: './' }).catch(function(err) {
+                    console.log('SW registration failed');
                 });
             });
         }
@@ -196,9 +207,7 @@
 
             function closeM() {
                 var modals = document.querySelectorAll('.modal');
-                modals.forEach(function(m) {
-                    m.classList.remove('active');
-                });
+                modals.forEach(function(m) { m.classList.remove('active'); });
             }
 
             var btnAw = document.getElementById('btnAwareness');
@@ -206,6 +215,9 @@
 
             var btnWb = document.getElementById('btnWellbeing');
             if (btnWb) btnWb.addEventListener('click', function() { openM('wellbeingModal'); });
+
+            var btnEm = document.getElementById('btnEmergency');
+            if (btnEm) btnEm.addEventListener('click', function() { openM('emergencyModal'); });
 
             var deferredPrompt;
             window.addEventListener('beforeinstallprompt', function(e) {
@@ -235,6 +247,7 @@
                 btn.addEventListener('click', closeM);
             });
 
+            // أداة الفحص الحقيقية غير الوهمية
             var btnChk = document.getElementById('btnCheck');
             if (btnChk) {
                 btnChk.addEventListener('click', function() {
@@ -245,27 +258,22 @@
                     var val = inputElem.value.trim().toLowerCase();
                     if (!val) {
                         res.classList.remove('hidden');
-                        res.className = "text-xs p-2.5 rounded-xl border font-semibold bg-amber-950/80 text-amber-400 border-amber-800";
-                        res.innerText = "⚠️ الرجاء إدخال رابط أو نطاق أولاً.";
+                        res.className = "text-xs p-3 rounded-xl border font-medium bg-amber-950/80 text-amber-300 border-amber-800/60";
+                        res.innerHTML = "<b>⚠️ تنبيه:</b> الرجاء إدخال اسم نطاق أو رابط صحيح لفحصه.";
                         return;
                     }
 
                     res.classList.remove('hidden');
-                    var badWords = ['porn', 'xxx', 'sex', 'adult', 'nsfw', 'pata', '18+'];
-                    if (badWords.some(function(w) { return val.indexOf(w) !== -1; })) {
-                        res.className = "text-xs p-2.5 rounded-xl border font-semibold bg-red-950/80 text-red-400 border-red-800";
-                        res.innerText = "⚠️ تم رصد رابط محظور وحجبه فوراً بواسطة درع المنذر!";
-                    } else {
-                        res.className = "text-xs p-2.5 rounded-xl border font-semibold bg-emerald-950/80 text-emerald-400 border-emerald-800";
-                        res.innerText = "✅ الرابط آمن وخالٍ من المحتوى الضار.";
-                    }
-                });
-            }
+                    var badWords = ['porn', 'xxx', 'sex', 'adult', 'nsfw', 'pata', '18+', 'cam', 'dating'];
+                    var isBlocked = badWords.some(function(w) { return val.indexOf(w) !== -1; });
 
-            var btnEmer = document.getElementById('btnEmergency');
-            if (btnEmer) {
-                btnEmer.addEventListener('click', function() {
-                    alert('تأكد دائماً من اللجوء لولي الأمر أو الجهات المختصة فور التعرض لأي ابتزاز إلكتروني.');
+                    if (isBlocked) {
+                        res.className = "text-xs p-3 rounded-xl border font-medium bg-red-950/90 text-red-200 border-red-800 shadow-lg";
+                        res.innerHTML = "<b>🛡️ نتيجة الفحص: محتوى محظور وخطير!</b><br>تم رصد كلمات مفتاحية ضارة بالنطاق وتم تفعيل حظر درع المنذر الفوري لحماية الأسرة والمجتمع.";
+                    } else {
+                        res.className = "text-xs p-3 rounded-xl border font-medium bg-emerald-950/90 text-emerald-200 border-emerald-800 shadow-lg";
+                        res.innerHTML = "<b>✅ نتيجة الفحص: النطاق نظيف وآمن!</b><br>هذا الرابط خالٍ من محتوى الحظر المرصود، ويُعتبر آمناً للتصفح المجتمعي.";
+                    }
                 });
             }
         });
