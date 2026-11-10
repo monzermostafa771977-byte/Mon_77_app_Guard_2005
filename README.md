@@ -1,2 +1,2 @@
-# Mon_77 app Guard - V11 Ultimate Fixed
-تم حل كافة مشاكل التجميد والتثبيت والأيقونة.
+# Mon_77 app Guard - V12 Absolute Fix
+تم إزالة الـ Service Worker المعطل لضمان التشغيل الفوري والتحكم الكامل للأزرار.

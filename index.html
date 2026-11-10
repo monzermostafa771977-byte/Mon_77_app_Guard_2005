@@ -29,7 +29,7 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans select-none antialiased">
     
-    <!-- الهيدر الرئيسي مع الأيقونة الأصلية -->
+    <!-- الهيدر الرئيسي -->
     <header class="cyber-glass sticky top-0 z-40 p-4 border-b border-slate-800">
         <div class="max-w-md mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-3 space-x-reverse">
@@ -222,15 +222,8 @@
         </div>
     </div>
 
-    <!-- Script المعالج الشامل لمنع التهنيج وضمان العمل بنسبة 100% -->
+    <!-- Script تنفيذي فوري مباشر بدون أي تعقيدات تجميد -->
     <script>
-        // تعطيل Service Worker القديم منعاً لأي كاش تالف
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(regs) {
-                for(let reg of regs) reg.unregister();
-            });
-        }
-
         const tips = [
             ""إن الله يراقبك في السر والعلن؛ فاجعل هاتفك شاهداً لك لا عليك، وغض بصرك عما لا يرضيه."",
             "👁️ صحة عينيك نعمَة؛ اتبع قاعدة (20-20-20) وأرح بصرك باستمرار.",
@@ -245,13 +238,11 @@
         let pinCode = "1234";
 
         document.addEventListener("DOMContentLoaded", function() {
-            // تحديث النصائح
             document.getElementById("btnChangeTip").addEventListener("click", function() {
                 tipIdx = (tipIdx + 1) % tips.length;
                 document.getElementById("tipContainer").innerText = tips[tipIdx];
             });
 
-            // الوقت
             document.getElementById("timeSelect").addEventListener("change", function(e) {
                 timeSec = parseInt(e.target.value) * 60;
                 updateDisplay();
@@ -273,7 +264,6 @@
                 }
             }, 1000);
 
-            // الوضع الآمن والـ PIN
             document.getElementById("btnStartFocus").addEventListener("click", function() {
                 document.getElementById("safeModeScreen").classList.add("active");
             });
@@ -294,7 +284,6 @@
                 }
             });
 
-            // النوافذ
             document.getElementById("btnNightShield").addEventListener("click", () => document.getElementById("nightModal").classList.add("active"));
             document.getElementById("btnJournal").addEventListener("click", () => document.getElementById("journalModal").classList.add("active"));
             document.getElementById("btnHealth").addEventListener("click", () => document.getElementById("healthModal").classList.add("active"));
@@ -306,7 +295,6 @@
                 });
             });
 
-            // المشاركة
             document.getElementById("btnShareBadge").addEventListener("click", function() {
                 if(navigator.share) {
                     navigator.share({title: 'Mon_77 Guard', text: 'تطبيق حماية الرفاهية والأخلاق', url: window.location.href}).catch(()=>{});
@@ -315,13 +303,11 @@
                 }
             });
 
-            // حفظ الملاحظات
             document.getElementById("btnSaveNote").addEventListener("click", function() {
                 let note = document.getElementById("journalNote").value;
                 if(note) { localStorage.setItem("note", note); alert("✅ تم الحفظ محلياً!"); document.getElementById("journalModal").classList.remove("active"); }
             });
 
-            // الفحص
             document.getElementById("btnCheck").addEventListener("click", function() {
                 let val = document.getElementById("checkInput").value.trim().toLowerCase();
                 let res = document.getElementById("checkResult");
