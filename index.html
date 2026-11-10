@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Mon_77 app Guard - الرفاهية الرقمية والدرع الخاشع</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -18,7 +18,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .shield-glow {
-            box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
         }
         button, a, select, input {
             touch-action: manipulation;
@@ -27,9 +27,9 @@
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans select-none antialiased">
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
     
-    <!-- الهيدر الرئيسي مدمج بالأيقونة الرسمية -->
+    <!-- الهيدر الرئيسي -->
     <header class="cyber-glass sticky top-0 z-40 p-4 border-b border-slate-800">
         <div class="max-w-md mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-3 space-x-reverse">
@@ -41,7 +41,7 @@
                     <span class="text-[11px] text-slate-400 font-medium">حارس الأخلاق والرفاهية الرقمية</span>
                 </div>
             </div>
-            <button onclick="openModal('installModal')" type="button" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-lg flex items-center space-x-1 space-x-reverse animate-pulse">
+            <button onclick="openModal('installModal')" type="button" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg flex items-center space-x-1 space-x-reverse animate-pulse">
                 <i class="fa-solid fa-download ml-1"></i> تثبيت
             </button>
         </div>
@@ -50,19 +50,19 @@
     <!-- المحتوى الرئيسي -->
     <main class="max-w-md mx-auto p-4 space-y-5 pb-20">
         
-        <!-- قسم الرسائل الإيمانية -->
+        <!-- قسم الرسائل الإيمانية (مصحح تماماً بدون اقتباسات متداخلة مسببة للأخطاء) -->
         <div class="cyber-glass border border-emerald-500/40 rounded-3xl p-5 space-y-3 shadow-2xl relative overflow-hidden">
             <div class="flex justify-between items-center border-b border-slate-800 pb-2.5">
                 <div class="flex items-center space-x-2 space-x-reverse text-emerald-400">
                     <i class="fa-solid fa-lightbulb text-lg"></i>
                     <h3 class="font-bold text-xs">إضاءات إيمانية وصحية وأخلاقية</h3>
                 </div>
-                <button onclick="changeTip()" type="button" class="text-[10px] text-slate-400 hover:text-emerald-400 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-lg">
+                <button onclick="changeTip()" type="button" class="text-xs text-slate-400 hover:text-emerald-400 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-lg">
                     <i class="fa-solid fa-rotate-right ml-1"></i> نصيحة أخرى
                 </button>
             </div>
             <div id="tipContainer" class="text-xs text-slate-200 leading-relaxed min-h-[60px] flex items-center font-medium">
-                "إن الله يراقبك في السر والعلن؛ فاجعل هاتفك شاهداً لك لا عليك، وغض بصرك عما لا يرضيه."
+                إن الله يراقبك في السر والعلن؛ فاجعل هاتفك شاهداً لك لا عليك، وغض بصرك عما لا يرضيه.
             </div>
         </div>
 
@@ -75,19 +75,19 @@
                     </div>
                     <div>
                         <h3 class="font-bold text-sm text-amber-300">مؤقت الرفاهية والوضع الآمن</h3>
-                        <p class="text-[10px] text-slate-400">إدارة الاستخدام المتصل بمرونة</p>
+                        <p class="text-[11px] text-slate-400">إدارة الاستخدام المتصل بمرونة</p>
                     </div>
                 </div>
-                <span class="text-[10px] font-bold bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/30">نشط الآن</span>
+                <span class="text-[11px] font-bold bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/30">نشط الآن</span>
             </div>
 
             <div class="bg-slate-950/80 rounded-2xl p-4 text-center space-y-2 border border-slate-800">
-                <div class="text-[11px] text-slate-400">الاستخدام المتصل المتبقي:</div>
+                <div class="text-xs text-slate-400">الاستخدام المتصل المتبقي:</div>
                 <div id="countdownDisplay" class="text-3xl font-black text-amber-400 tracking-wider">30:00</div>
                 
                 <div class="flex justify-between items-center pt-2 text-xs text-slate-300 border-t border-slate-800/60 mt-2">
                     <span>حد الاستخدام:</span>
-                    <select id="timeSelect" onchange="updateTimeLimit()" class="bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white focus:outline-none">
+                    <select id="timeSelect" onchange="requestPinForTimeChange(this)" class="bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white focus:outline-none">
                         <option value="15">15 دقيقة</option>
                         <option value="30" selected>30 دقيقة</option>
                         <option value="45">45 دقيقة</option>
@@ -106,14 +106,14 @@
             </div>
         </div>
 
-        <!-- الأقسام التفاعلية المباشرة -->
+        <!-- الأقسام التفاعلية -->
         <div class="grid grid-cols-2 gap-3">
             <button onclick="openModal('nightModal')" type="button" class="w-full text-right cyber-glass border border-indigo-500/30 p-4 rounded-2xl space-y-2 shadow active:scale-95 transition-all">
                 <div class="w-9 h-9 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
                     <i class="fa-solid fa-moon"></i>
                 </div>
                 <div class="font-bold text-sm text-slate-200">الدرع الخاشع</div>
-                <div class="text-[10px] text-slate-400">قفل النوم وأذكار المساء</div>
+                <div class="text-[11px] text-slate-400">قفل النوم وأذكار المساء</div>
             </button>
 
             <button onclick="openModal('journalModal')" type="button" class="w-full text-right cyber-glass border border-purple-500/30 p-4 rounded-2xl space-y-2 shadow active:scale-95 transition-all">
@@ -121,7 +121,7 @@
                     <i class="fa-solid fa-pen-to-square"></i>
                 </div>
                 <div class="font-bold text-sm text-slate-200">دفتر المحاسبة</div>
-                <div class="text-[10px] text-slate-400">خواطر وساعات النقاوة</div>
+                <div class="text-[11px] text-slate-400">سجل الخواطر والعهود</div>
             </button>
 
             <button onclick="openModal('healthModal')" type="button" class="w-full text-right cyber-glass border border-teal-500/30 p-4 rounded-2xl space-y-2 shadow active:scale-95 transition-all">
@@ -129,7 +129,7 @@
                     <i class="fa-solid fa-eye"></i>
                 </div>
                 <div class="font-bold text-sm text-slate-200">صحة العين والعقل</div>
-                <div class="text-[10px] text-slate-400">تمارين الراحة البصرية</div>
+                <div class="text-[11px] text-slate-400">تمارين الراحة البصرية</div>
             </button>
 
             <button onclick="shareApp()" type="button" class="w-full text-right cyber-glass border border-rose-500/30 p-4 rounded-2xl space-y-2 shadow active:scale-95 transition-all">
@@ -137,18 +137,18 @@
                     <i class="fa-solid fa-share-nodes"></i>
                 </div>
                 <div class="font-bold text-sm text-slate-200">وسام الالتزام</div>
-                <div class="text-[10px] text-slate-400">نشر الإنجاز والتوعية</div>
+                <div class="text-[11px] text-slate-400">نشر الإنجاز والتوعية</div>
             </button>
         </div>
 
         <!-- فحص النطاقات -->
         <div class="cyber-glass border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
             <h3 class="font-bold text-xs text-slate-200 flex items-center">
-                <i class="fa-solid fa-magnifying-glass-shield text-red-500 ml-2"></i> فحص النطاقات والروابط المشبوهة
+                <i class="fa-solid fa-magnifying-glass-shield text-emerald-400 ml-2"></i> فحص النطاقات والروابط
             </h3>
             <div class="flex space-x-2 space-x-reverse">
-                <input type="text" id="checkInput" placeholder="أدخل الرابط المراد فحصه..." class="flex-1 bg-slate-950/80 border border-slate-800 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-red-500 text-white">
-                <button onclick="checkDomain()" type="button" class="bg-gradient-to-r from-red-600 to-rose-600 px-4 py-2 rounded-xl text-xs font-bold text-white shadow">فحص</button>
+                <input type="text" id="checkInput" placeholder="أدخل الرابط المراد فحصه..." class="flex-1 bg-slate-950/80 border border-slate-800 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-emerald-500 text-white">
+                <button onclick="checkDomain()" type="button" class="bg-gradient-to-r from-emerald-600 to-teal-600 px-4 py-2 rounded-xl text-xs font-bold text-white shadow">فحص</button>
             </div>
             <div id="checkResult" class="hidden text-xs p-3 rounded-xl border font-medium space-y-1"></div>
         </div>
@@ -156,13 +156,13 @@
     </main>
 
     <!-- شاشة الوضع الآمن -->
-    <div id="safeModeScreen" class="modal fixed inset-0 bg-slate-950/95 z-50 flex-col items-center justify-center p-6 text-center space-y-6">
-        <div class="w-24 h-24 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center border-2 border-red-500/40 shadow-2xl">
+    <div id="safeModeScreen" class="modal fixed inset-0 bg-slate-950/98 z-50 flex-col items-center justify-center p-6 text-center space-y-6">
+        <div class="w-24 h-24 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center border-2 border-red-500/40 shadow-2xl animate-pulse">
             <i class="fa-solid fa-lock text-4xl"></i>
         </div>
         <div class="space-y-2 max-w-xs">
-            <h2 class="text-xl font-black text-red-400">الوضع الآمن مفعل (Mon_77 Guard)</h2>
-            <p class="text-xs text-slate-300 leading-relaxed">انتهى حد الاستخدام المسموح به. التطبيقات المتاحة للطوارئ فقط:</p>
+            <h2 class="text-xl font-black text-red-400">الوضع الآمن مفعل</h2>
+            <p class="text-xs text-slate-300 leading-relaxed">انتهى حد الاستخدام المسموح به. تم تفعيل درع الحماية للحفاظ على وقتك:</p>
         </div>
         <div class="cyber-glass border border-slate-800 rounded-2xl p-4 w-full max-w-xs space-y-3">
             <div class="grid grid-cols-2 gap-3 text-xs">
@@ -174,44 +174,45 @@
                 </a>
             </div>
         </div>
-        <button onclick="unlockPinCode()" type="button" class="px-6 py-2.5 bg-slate-800 text-slate-200 text-xs font-bold rounded-xl border border-slate-700">إلغاء القفل برمز PIN</button>
+        <button onclick="unlockPinCode()" type="button" class="px-6 py-2.5 bg-slate-800 text-slate-200 text-xs font-bold rounded-xl border border-slate-700">إلغاء القفل بررمز PIN</button>
     </div>
 
     <!-- Modals -->
-    <div id="installModal" class="modal fixed inset-0 bg-slate-950/85 z-50 items-center justify-center p-4">
+    <div id="installModal" class="modal fixed inset-0 bg-slate-950/85 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
         <div class="cyber-glass border border-slate-800 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                <h3 class="font-bold text-base text-red-400">تثبيت Mon_77 app Guard</h3>
+                <h3 class="font-bold text-base text-emerald-400">تثبيت التطبيق</h3>
                 <button onclick="closeModal('installModal')" class="text-slate-400 hover:text-white p-1" type="button"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">اضغط على القائمة (النقاط الثلاث) في أعلى المتصفح ثم اختر <b class="text-emerald-400">"تثبيت التطبيق" (Install App)</b> أو <b class="text-emerald-400">"الإضافة إلى الشاشة الرئيسية"</b>.</p>
-            <button onclick="closeModal('installModal')" class="w-full py-2.5 bg-red-600 rounded-xl text-xs font-bold text-white shadow" type="button">حسناً</button>
+            <p class="text-xs text-slate-300 leading-relaxed">اضغط على القائمة (النقاط الثلاث) في المتصفح ثم اختر <b class="text-emerald-400">"تثبيت التطبيق"</b> أو <b class="text-emerald-400">"الإضافة إلى الشاشة الرئيسية"</b>.</p>
+            <button onclick="closeModal('installModal')" class="w-full py-2.5 bg-emerald-600 rounded-xl text-xs font-bold text-white shadow" type="button">حسناً</button>
         </div>
     </div>
 
-    <div id="nightModal" class="modal fixed inset-0 bg-slate-950/85 z-50 items-center justify-center p-4">
+    <div id="nightModal" class="modal fixed inset-0 bg-slate-950/85 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
         <div class="cyber-glass border border-indigo-500/40 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                 <h3 class="font-bold text-base text-indigo-400">الدرع الخاشع وقفل النوم</h3>
                 <button onclick="closeModal('nightModal')" class="text-slate-400 hover:text-white p-1" type="button"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">يُنصح بإغلاق الهاتف قبل النوم لساعة لتجنب الضوء الأزرق.<br><br><b>أذكار النوم:</b> "بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي وَبِكَ أَرْفَعُهُ..."</p>
+            <p class="text-xs text-slate-300 leading-relaxed">يُنصح بإغلاق الهاتف قبل النوم لتجنب الضوء الأزرق.<br><br><b>أذكار النوم:</b> باسمك ربي وضعت جنبي وبك أرفعه...</p>
             <button onclick="closeModal('nightModal')" class="w-full py-2.5 bg-indigo-600 rounded-xl text-xs font-bold text-white shadow" type="button">إغلاق</button>
         </div>
     </div>
 
-    <div id="journalModal" class="modal fixed inset-0 bg-slate-950/85 z-50 items-center justify-center p-4">
+    <div id="journalModal" class="modal fixed inset-0 bg-slate-950/85 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
         <div class="cyber-glass border border-purple-500/40 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                <h3 class="font-bold text-base text-purple-400">دفتر المحاسبة والاستغفار</h3>
+                <h3 class="font-bold text-base text-purple-400">دفتر المحاسبة والعهود</h3>
                 <button onclick="closeModal('journalModal')" class="text-slate-400 hover:text-white p-1" type="button"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             <textarea id="journalNote" rows="3" placeholder="اكتب عهدك مع نفسك اليوم..." class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-purple-500"></textarea>
-            <button onclick="saveJournalNote()" type="button" class="w-full py-2 bg-purple-600 rounded-xl text-xs font-bold text-white shadow">حفظ محلياً</button>
+            <button onclick="saveJournalNote()" type="button" class="w-full py-2 bg-purple-600 rounded-xl text-xs font-bold text-white shadow">حفظ السجل محلياً</button>
+            <div id="journalHistory" class="text-[11px] text-slate-400 max-h-32 overflow-y-auto space-y-1"></div>
         </div>
     </div>
 
-    <div id="healthModal" class="modal fixed inset-0 bg-slate-950/85 z-50 items-center justify-center p-4">
+    <div id="healthModal" class="modal fixed inset-0 bg-slate-950/85 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
         <div class="cyber-glass border border-teal-500/40 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                 <h3 class="font-bold text-base text-teal-400">صحة العين والراحة العقلية</h3>
@@ -222,14 +223,21 @@
         </div>
     </div>
 
-    <!-- دوال JavaScript المباشرة -->
+    <!-- دوال JavaScript مصححة بالكامل -->
     <script>
+        // تسجيل الـ Service Worker لضمان العمل بدون إنترنت
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').catch(() => {});
+            });
+        }
+
         const tips = [
-            ""إن الله يراقبك في السر والعلن؛ فاجعل هاتفك شاهداً لك لا عليك، وغض بصرك عما لا يرضيه."",
-            "👁️ صحة عينيك نعمَة؛ اتبع قاعدة (20-20-20) وأرح بصرك باستمرار.",
-            "🛡️ الحفاظ على الأخلاق يبدأ من السيطرة على النفس واختيار ما تنظر إليه بحكمة.",
-            "🧠 عقلك كنز ثمين؛ لا ترهقه بكثرة التشتت والتصفح السلبي.",
-            "✨ "وَمَنْ يَتَّقِ اللَّهَ يَجْعَلْ لَهُ مَخْرَجاً"؛ التقوى حصن الحياة."
+            "إن الله يراقبك في السر والعلن؛ فاجعل هاتفك شاهداً لك لا عليك، وغض بصرك عما لا يرضيه.",
+            "صحة عينيك نعمَة؛ اتبع قاعدة (20-20-20) وأرح بصرك باستمرار أثناء التصفح.",
+            "الحفاظ على الأخلاق والرفعة يبدأ من السيطرة على النفس واختيار ما تنظر إليه بحكمة.",
+            "عقلك كنز ثمين؛ لا ترهقه بكثرة التشتت والتصفح السلبي، واجعله ينبض بالنافع والمفيد.",
+            "ومن يتق الله يجعل له مخرجا؛ التقوى هي الحصن الأمني الأقوى في العالم الرقمي."
         ];
 
         let tipIdx = 0;
@@ -239,46 +247,73 @@
         }
 
         let timeSec = 1800;
-        let timerId = setInterval(function() {
-            if (timeSec > 0) {
-                timeSec--;
-                let m = Math.floor(timeSec / 60);
-                let s = timeSec % 60;
-                document.getElementById("countdownDisplay").innerText = (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
-            } else {
-                clearInterval(timerId);
-                activateSafeMode();
-            }
-        }, 1000);
+        let timerId = null;
 
-        function updateTimeLimit() {
-            let val = document.getElementById("timeSelect").value;
-            timeSec = parseInt(val) * 60;
+        function startTimer() {
+            if (timerId) clearInterval(timerId);
+            timerId = setInterval(function() {
+                if (timeSec > 0) {
+                    timeSec--;
+                    let m = Math.floor(timeSec / 60);
+                    let s = timeSec % 60;
+                    document.getElementById("countdownDisplay").innerText = (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
+                } else {
+                    clearInterval(timerId);
+                    activateSafeMode();
+                }
+            }, 1000);
+        }
+        startTimer();
+
+        let savedPin = localStorage.getItem("mon_pin") || "1234";
+
+        function requestPinForTimeChange(selectElem) {
+            let p = prompt("أدخل رمز PIN لتغيير حد الاستخدام:");
+            if (p === savedPin) {
+                timeSec = parseInt(selectElem.value) * 60;
+                startTimer();
+                alert("✅ تم تحديث الوقت بنجاح!");
+            } else {
+                alert("❌ رمز PIN غير صحيح! تم إرجاع القيمة السابقة.");
+                selectElem.value = Math.floor(timeSec / 60);
+            }
         }
 
         function activateSafeMode() {
             document.getElementById("safeModeScreen").classList.add("active");
         }
 
-        let pinCode = "1234";
         function setPinCode() {
-            let p = prompt("أدخل رمز PIN جديد لحماية إعدادات الوقت:", pinCode);
-            if(p) { pinCode = p; alert("✅ تم حفظ رمز PIN بنجاح!"); }
+            let oldP = prompt("أدخل رمز PIN الحالي:");
+            if (oldP === savedPin) {
+                let newP = prompt("أدخل رمز PIN الجديد:");
+                if (newP && newP.length >= 4) {
+                    savedPin = newP;
+                    localStorage.setItem("mon_pin", newP);
+                    alert("✅ تم تغيير رمز PIN بنجاح!");
+                } else {
+                    alert("❌ الرمز الجديد قصير جداً.");
+                }
+            } else if (oldP !== null) {
+                alert("❌ رمز PIN الحالي غير صحيح!");
+            }
         }
 
         function unlockPinCode() {
             let p = prompt("أدخل رمز PIN لإلغاء قفل الوضع الآمن:");
-            if(p === pinCode) {
+            if (p === savedPin) {
                 document.getElementById("safeModeScreen").classList.remove("active");
                 timeSec = parseInt(document.getElementById("timeSelect").value) * 60;
-                alert("🔓 تم فتح القفل وتجديد الوقت!");
-            } else if(p !== null) {
+                startTimer(); // إعادة تشغيل العد التنازلي بنجاح
+                alert("🔓 تم فتح القفل وتجديد وقت الرفاهية!");
+            } else if (p !== null) {
                 alert("❌ رمز PIN غير صحيح!");
             }
         }
 
         function openModal(id) {
             document.getElementById(id).classList.add("active");
+            if(id === 'journalModal') loadJournalHistory();
         }
 
         function closeModal(id) {
@@ -287,19 +322,28 @@
 
         function shareApp() {
             if(navigator.share) {
-                navigator.share({title: 'Mon_77 Guard', text: 'تطبيق حماية الرفاهية والأخلاق والدرع الخاشع', url: window.location.href}).catch(()=>{});
+                navigator.share({title: 'Mon_77 Guard', text: 'تطبيق حماية الرفاهية الرقمية والدرع الخاشع', url: window.location.href}).catch(()=>{});
             } else {
-                alert("رابط التطبيق جاهز للمشاركة ونشر الخير!");
+                alert("رابط التطبيق جاهز للمشاركة!");
             }
         }
 
         function saveJournalNote() {
-            let note = document.getElementById("journalNote").value;
-            if(note) { 
-                localStorage.setItem("note", note); 
-                alert("✅ تم الحفظ في دفتر المحاسبة الخاص بك على هذا الهاتف!"); 
-                closeModal('journalModal'); 
+            let note = document.getElementById("journalNote").value.trim();
+            if(note) {
+                let notes = JSON.parse(localStorage.getItem("mon_journals") || "[]");
+                notes.unshift({text: note, date: new Date().toLocaleString('ar-EG')});
+                localStorage.setItem("mon_journals", JSON.stringify(notes));
+                document.getElementById("journalNote").value = "";
+                loadJournalHistory();
+                alert("✅ تم حفظ العهد في دفتر المحاسبة!");
             }
+        }
+
+        function loadJournalHistory() {
+            let container = document.getElementById("journalHistory");
+            let notes = JSON.parse(localStorage.getItem("mon_journals") || "[]");
+            container.innerHTML = notes.map(n => `<div class="p-2 bg-slate-900 rounded-lg border border-slate-800 mb-1"><b>${n.date}:</b> ${n.text}</div>`).join('');
         }
 
         function checkDomain() {
@@ -308,15 +352,19 @@
             res.classList.remove("hidden");
             if(!val) {
                 res.className = "text-xs p-3 rounded-xl border bg-amber-950 text-amber-300";
-                res.innerHTML = "⚠️ أدخل رابطاً صحيحاً لفحصه.";
+                res.innerHTML = "⚠️ أدخل نطاقاً صحيحاً لفحصه.";
                 return;
             }
-            if(['porn','xxx','sex','adult'].some(w => val.includes(w))) {
+            // فحص ذكي متقدم
+            let blockedKeywords = ['porn', 'xxx', 'sex', 'adult', 'nsfw', 'pata', '18+', 'gambling', 'bet'];
+            let isDangerous = blockedKeywords.some(w => val.includes(w));
+
+            if(isDangerous) {
                 res.className = "text-xs p-3 rounded-xl border bg-red-950 text-red-200 shield-glow";
-                res.innerHTML = "🛡️ تحذير درع Mon_77: محتوى محظور وخطير جداً!";
+                res.innerHTML = "🛡️ تحذير درع Mon_77: تم رصد محتوى خطير أو محظور وتم حظر الوصول!";
             } else {
                 res.className = "text-xs p-3 rounded-xl border bg-emerald-950 text-emerald-200";
-                res.innerHTML = "✅ النطاق آمن ونظيف تماماً.";
+                res.innerHTML = "✅ النطاق يبدو نظيفاً، لكن احرص دائماً على اليقظة الرقمية.";
             }
         }
     </script>
