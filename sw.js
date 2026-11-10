@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mon-77-app-guard-v6';
+const CACHE_NAME = 'mon-77-app-guard-v7-ultimate';
 const assetsToCache = ['./', './index.html', './manifest.json'];
 
 self.addEventListener('install', event => {
