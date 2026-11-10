@@ -1,5 +1,5 @@
-const CACHE_NAME = 'mon-77-app-guard-v7-ultimate';
-const assetsToCache = ['./', './index.html', './manifest.json'];
+const CACHE_NAME = 'mon-77-app-guard-v10-exact';
+const assetsToCache = ['./', './index.html', './manifest.json', './icon.png'];
 
 self.addEventListener('install', event => {
   self.skipWaiting();
@@ -18,6 +18,6 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(cached => cached || fetch(event.request))
+    fetch(event.request).catch(() => caches.match(event.request))
   );
 });
