@@ -1,5 +1,5 @@
-const CACHE_NAME = 'mon-77-guard-v16';
-const assets = ['./', './index.html', './manifest.json', './icon.png'];
+const CACHE_NAME = 'mon-77-guard-v16-2';
+const assets = ['./', './index.html', './GuardStateMachine.js', './manifest.json', './icon.png'];
 
 self.addEventListener('install', e => {
     e.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(assets)));
