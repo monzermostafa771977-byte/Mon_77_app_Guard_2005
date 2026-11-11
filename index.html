@@ -2,12 +2,14 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Mon_77 app Guard - حارس الخصوصية والرفاهية الرقمية</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon_77 app Guard - الرفاهية الرقمية والدرع الخاشع</title>
     <!-- Tailwind CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
     <meta name="theme-color" content="#090d16">
     <style>
         .modal { display: none; }
@@ -18,18 +20,20 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .shield-glow {
-            box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
         }
         button, a, select, input {
             touch-action: manipulation;
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
         }
+            @keyframes breathe { 0%,100%{transform:scale(.7)} 40%{transform:scale(1.1)} }
+        .breath { animation: breathe 10s ease-in-out infinite; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans select-none antialiased">
     
-    <!-- الهيدر الرئيسي -->
+    <!-- الهيدر الرئيسي مدمج بالأيقونة الرسمية -->
     <header class="cyber-glass sticky top-0 z-40 p-4 border-b border-slate-800">
         <div class="max-w-md mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-3 space-x-reverse">
@@ -38,10 +42,10 @@
                 </div>
                 <div>
                     <h1 class="font-black text-base tracking-wide bg-gradient-to-r from-emerald-400 to-teal-200 bg-clip-text text-transparent">Mon_77 app Guard</h1>
-                    <span class="text-[10px] text-slate-400 font-medium">حارس... يحمي جهازك، ويصون خصوصيتك، ويعينك على حماية نفسك</span>
+                    <span class="text-[11px] text-slate-400 font-medium">حارس الأخلاق والرفاهية الرقمية</span>
                 </div>
             </div>
-            <button onclick="openModal('installModal')" type="button" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg flex items-center space-x-1 space-x-reverse animate-pulse">
+            <button onclick="openModal('installModal')" type="button" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-lg flex items-center space-x-1 space-x-reverse animate-pulse">
                 <i class="fa-solid fa-download ml-1"></i> تثبيت
             </button>
         </div>
@@ -50,34 +54,30 @@
     <!-- المحتوى الرئيسي -->
     <main class="max-w-md mx-auto p-4 space-y-5 pb-20">
         
-        <!-- رؤية حارس الثلاثية -->
+        <!-- قسم الرسائل الإيمانية والصحية -->
         <div class="cyber-glass border border-emerald-500/40 rounded-3xl p-5 space-y-3 shadow-2xl relative overflow-hidden">
-            <div class="flex items-center space-x-2 space-x-reverse text-emerald-400 border-b border-slate-800 pb-2.5">
-                <i class="fa-solid fa-shield-halved text-lg"></i>
-                <h3 class="font-bold text-xs">رؤية حارس الثلاثية</h3>
-            </div>
-            <p class="text-xs text-slate-200 leading-relaxed font-semibold">
-                «حارس... يحمي جهازك، ويصون خصوصيتك، ويعينك على حماية نفسك من الاستعمال الرقمي الضار».
-            </p>
-        </div>
-
-        <!-- قسم الرسائل الإيمانية والأخلاقية -->
-        <div class="cyber-glass border border-slate-800 rounded-3xl p-5 space-y-3 shadow-2xl relative overflow-hidden">
             <div class="flex justify-between items-center border-b border-slate-800 pb-2.5">
-                <div class="flex items-center space-x-2 space-x-reverse text-amber-400">
+                <div class="flex items-center space-x-2 space-x-reverse text-emerald-400">
                     <i class="fa-solid fa-lightbulb text-lg"></i>
-                    <h3 class="font-bold text-xs">إضاءات إيمانية وصحية وأخلاقية</h3>
+                    <h3 class="font-bold text-xs">إضاءات إيمانية وصحية</h3>
                 </div>
-                <button onclick="changeTip()" type="button" class="text-xs text-slate-400 hover:text-emerald-400 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-lg">
-                    <i class="fa-solid fa-rotate-right ml-1"></i> نصيحة أخرى
+                <button onclick="changeTip()" type="button" class="text-[10px] text-slate-400 hover:text-emerald-400 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-lg">
+                    <i class="fa-solid fa-rotate-right ml-1"></i> رسالة أخرى
                 </button>
             </div>
-            <div id="tipContainer" class="text-xs text-slate-200 leading-relaxed min-h-[50px] flex items-center font-medium">
-                إن الله يراقبك في السر والعلن؛ فاجعل هاتفك شاهداً لك لا عليك، وغض بصرك عما لا يرضيه.
+            <div id="tipContainer" class="text-sm text-slate-100 leading-relaxed min-h-[70px] flex items-center font-medium"></div>
+            <div id="tipSource" class="text-[10px] text-emerald-300/80"></div>
+            <div class="flex justify-between items-center pt-2 text-xs text-slate-300 border-t border-slate-800/60">
+                <span>تذكير تلقائي كل:</span>
+                <select id="remindSelect" onchange="setRemind()" class="bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white">
+                    <option value="0">إيقاف</option><option value="10">10 دقائق</option><option value="20">20 دقيقة</option>
+                    <option value="30">30 دقيقة</option><option value="60">60 دقيقة</option>
+                </select>
             </div>
+            <button id="notifBtn" onclick="enableNotif()" type="button" class="w-full py-2 bg-slate-800 text-slate-200 text-[11px] font-bold rounded-xl border border-slate-700">🔔 السماح بالإشعارات (تعمل غالباً والتطبيق مفتوح)</button>
         </div>
 
-        <!-- مؤقت الرفاهية المدار بـ GuardStateMachine -->
+        <!-- مؤقت الرفاهية والوضع الآمن -->
         <div class="cyber-glass border border-amber-500/40 rounded-3xl p-5 space-y-4 shadow-2xl">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                 <div class="flex items-center space-x-2 space-x-reverse">
@@ -85,26 +85,31 @@
                         <i class="fa-solid fa-hourglass-half text-lg"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-sm text-amber-300">مؤقت آلة الحالة الرقمية</h3>
-                        <p id="stateBadgeText" class="text-[11px] text-slate-400">المراقبة والاستهلاك النشط</p>
+                        <h3 class="font-bold text-sm text-amber-300">مؤقت الرفاهية والوضع الآمن</h3>
+                        <p class="text-[10px] text-slate-400">إدارة الاستخدام المتصل بمرونة</p>
                     </div>
                 </div>
-                <span id="timerStatusBadge" class="text-[11px] font-bold bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/30">نشط الآن</span>
+                <span class="text-[10px] font-bold bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/30">نشط الآن</span>
             </div>
 
             <div class="bg-slate-950/80 rounded-2xl p-4 text-center space-y-2 border border-slate-800">
-                <div id="countdownLabel" class="text-xs text-slate-400">الاستخدام المتبقي لليوم:</div>
+                <div class="text-[11px] text-slate-400">الاستخدام المتصل المتبقي:</div>
                 <div id="countdownDisplay" class="text-3xl font-black text-amber-400 tracking-wider">30:00</div>
                 
                 <div class="flex justify-between items-center pt-2 text-xs text-slate-300 border-t border-slate-800/60 mt-2">
-                    <span>المهلات اليومية المتبقية:</span>
-                    <span id="gracesLeftLabel" class="font-bold text-emerald-400">2 من 2</span>
+                    <span>حد الاستخدام:</span>
+                    <select id="timeSelect" onchange="updateTimeLimit()" class="bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white focus:outline-none">
+                        <option value="15">15 دقيقة</option>
+                        <option value="30" selected>30 دقيقة</option>
+                        <option value="45">45 دقيقة</option>
+                        <option value="60">60 دقيقة</option>
+                    </select>
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-2">
-                <button onclick="handleRequestGrace()" type="button" class="py-2.5 bg-gradient-to-r from-amber-600 to-amber-500 text-white text-xs font-bold rounded-xl shadow">
-                    <i class="fa-solid fa-hourglass-start ml-1"></i> طلب مهلة استثنائية
+                <button onclick="activateSafeMode()" type="button" class="py-2.5 bg-gradient-to-r from-amber-600 to-amber-500 text-white text-xs font-bold rounded-xl shadow">
+                    <i class="fa-solid fa-lock ml-1"></i> تفعيل الوضع الآمن
                 </button>
                 <button onclick="setPinCode()" type="button" class="py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-xl border border-slate-700">
                     <i class="fa-solid fa-key ml-1"></i> رمز الأمان PIN
@@ -112,14 +117,22 @@
             </div>
         </div>
 
-        <!-- الأقسام التفاعلية -->
+        <!-- لحظة ضعف + سلسلة الالتزام -->
+        <button onclick="openSOS()" type="button" class="w-full py-4 rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 text-white font-black text-base shadow-lg active:scale-95 transition-all">🆘 أمرّ بلحظة ضعف الآن</button>
+        <div class="cyber-glass border border-emerald-500/30 rounded-2xl p-4 grid grid-cols-2 gap-3 text-center">
+            <div><div id="streakDays" class="text-3xl font-black text-emerald-400">0</div><div class="text-[11px] text-slate-400">يوماً من الالتزام</div></div>
+            <div><div id="survivedCount" class="text-3xl font-black text-amber-400">0</div><div class="text-[11px] text-slate-400">لحظة عبرتُها بسلام</div></div>
+            <button onclick="resetStreak()" type="button" class="col-span-2 py-2 text-[11px] bg-slate-900 border border-slate-800 text-slate-300 rounded-xl">بدأت من جديد (التوبة ثم المتابعة)</button>
+        </div>
+
+        <!-- الأقسام التفاعلية المباشرة -->
         <div class="grid grid-cols-2 gap-3">
             <button onclick="openModal('nightModal')" type="button" class="w-full text-right cyber-glass border border-indigo-500/30 p-4 rounded-2xl space-y-2 shadow active:scale-95 transition-all">
                 <div class="w-9 h-9 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
                     <i class="fa-solid fa-moon"></i>
                 </div>
                 <div class="font-bold text-sm text-slate-200">الدرع الخاشع</div>
-                <div class="text-[11px] text-slate-400">قفل النوم وأذكار المساء</div>
+                <div class="text-[10px] text-slate-400">قفل النوم وأذكار المساء</div>
             </button>
 
             <button onclick="openModal('journalModal')" type="button" class="w-full text-right cyber-glass border border-purple-500/30 p-4 rounded-2xl space-y-2 shadow active:scale-95 transition-all">
@@ -127,7 +140,7 @@
                     <i class="fa-solid fa-pen-to-square"></i>
                 </div>
                 <div class="font-bold text-sm text-slate-200">دفتر المحاسبة</div>
-                <div class="text-[11px] text-slate-400">سجل الخواطر والعهود</div>
+                <div class="text-[10px] text-slate-400">خواطر وساعات النقاوة</div>
             </button>
 
             <button onclick="openModal('healthModal')" type="button" class="w-full text-right cyber-glass border border-teal-500/30 p-4 rounded-2xl space-y-2 shadow active:scale-95 transition-all">
@@ -135,7 +148,7 @@
                     <i class="fa-solid fa-eye"></i>
                 </div>
                 <div class="font-bold text-sm text-slate-200">صحة العين والعقل</div>
-                <div class="text-[11px] text-slate-400">تمارين الراحة البصرية</div>
+                <div class="text-[10px] text-slate-400">تمارين الراحة البصرية</div>
             </button>
 
             <button onclick="shareApp()" type="button" class="w-full text-right cyber-glass border border-rose-500/30 p-4 rounded-2xl space-y-2 shadow active:scale-95 transition-all">
@@ -143,18 +156,18 @@
                     <i class="fa-solid fa-share-nodes"></i>
                 </div>
                 <div class="font-bold text-sm text-slate-200">وسام الالتزام</div>
-                <div class="text-[11px] text-slate-400">نشر الإنجاز والتوعية</div>
+                <div class="text-[10px] text-slate-400">نشر الإنجاز والتوعية</div>
             </button>
         </div>
 
         <!-- فحص النطاقات -->
         <div class="cyber-glass border border-slate-800 rounded-2xl p-4 space-y-3 shadow-xl">
             <h3 class="font-bold text-xs text-slate-200 flex items-center">
-                <i class="fa-solid fa-magnifying-glass-shield text-emerald-400 ml-2"></i> فحص النطاقات وحماية الخصوصية
+                <i class="fa-solid fa-magnifying-glass-shield text-red-500 ml-2"></i> فحص النطاقات والروابط المشبوهة
             </h3>
             <div class="flex space-x-2 space-x-reverse">
-                <input type="text" id="checkInput" placeholder="أدخل الرابط المراد فحصه..." class="flex-1 bg-slate-950/80 border border-slate-800 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-emerald-500 text-white">
-                <button onclick="checkDomain()" type="button" class="bg-gradient-to-r from-emerald-600 to-teal-600 px-4 py-2 rounded-xl text-xs font-bold text-white shadow">فحص</button>
+                <input type="text" id="checkInput" placeholder="أدخل الرابط المراد فحصه..." class="flex-1 bg-slate-950/80 border border-slate-800 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-red-500 text-white">
+                <button onclick="checkDomain()" type="button" class="bg-gradient-to-r from-red-600 to-rose-600 px-4 py-2 rounded-xl text-xs font-bold text-white shadow">فحص</button>
             </div>
             <div id="checkResult" class="hidden text-xs p-3 rounded-xl border font-medium space-y-1"></div>
         </div>
@@ -162,13 +175,13 @@
     </main>
 
     <!-- شاشة الوضع الآمن -->
-    <div id="safeModeScreen" class="modal fixed inset-0 bg-slate-950/98 z-50 flex-col items-center justify-center p-6 text-center space-y-6">
-        <div class="w-24 h-24 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center border-2 border-red-500/40 shadow-2xl animate-pulse">
+    <div id="safeModeScreen" class="modal fixed inset-0 bg-slate-950/95 z-50 flex-col items-center justify-center p-6 text-center space-y-6">
+        <div class="w-24 h-24 rounded-full bg-red-600/20 text-red-500 flex items-center justify-center border-2 border-red-500/40 shadow-2xl">
             <i class="fa-solid fa-lock text-4xl"></i>
         </div>
         <div class="space-y-2 max-w-xs">
             <h2 class="text-xl font-black text-red-400">الوضع الآمن مفعل (Mon_77 Guard)</h2>
-            <p class="text-xs text-slate-300 leading-relaxed">انتهى حد الاستخدام المسموح به. تم تفعيل الحماية لحفظ وقتك وصيانة نفسك:</p>
+            <p class="text-xs text-slate-300 leading-relaxed">انتهى حد الاستخدام المسموح به. التطبيقات المتاحة للطوارئ فقط:</p>
         </div>
         <div class="cyber-glass border border-slate-800 rounded-2xl p-4 w-full max-w-xs space-y-3">
             <div class="grid grid-cols-2 gap-3 text-xs">
@@ -180,19 +193,34 @@
                 </a>
             </div>
         </div>
-        <button onclick="handleRequestGrace()" type="button" class="px-6 py-2.5 bg-gradient-to-r from-amber-600 to-amber-500 text-white text-xs font-bold rounded-xl shadow">طلب مهلة استثنائية بسبّب</button>
-        <button onclick="unlockPinCode()" type="button" class="px-6 py-2 bg-slate-800 text-slate-200 text-xs font-bold rounded-xl border border-slate-700">إلغاء القفل برمز PIN</button>
+        <button onclick="unlockPinCode()" type="button" class="px-6 py-2.5 bg-slate-800 text-slate-200 text-xs font-bold rounded-xl border border-slate-700">إلغاء القفل برمز PIN</button>
     </div>
+
+    <!-- نافذة إدخال PIN (بديل prompt: تخفي الأرقام) -->
+    <div id="pinModal" class="modal fixed inset-0 bg-slate-950/90 items-center justify-center p-4" style="z-index:60">
+        <div class="cyber-glass border border-amber-500/40 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl">
+            <h3 id="pinTitle" class="font-bold text-base text-amber-300"></h3>
+            <input id="pinInput" type="password" inputmode="numeric" autocomplete="off" maxlength="8" placeholder="••••" onkeydown="if(event.key==='Enter')pinSubmit()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-center text-xl tracking-widest text-white focus:outline-none focus:border-amber-500">
+            <div id="pinErr" class="text-xs text-red-400 min-h-[16px]"></div>
+            <div class="grid grid-cols-2 gap-2">
+                <button onclick="pinSubmit()" type="button" class="py-2.5 bg-amber-600 rounded-xl text-xs font-bold text-white">تأكيد</button>
+                <button onclick="closePin()" type="button" class="py-2.5 bg-slate-800 rounded-xl text-xs font-bold text-slate-200 border border-slate-700">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-6 bg-slate-800 border border-slate-700 text-slate-100 text-xs px-4 py-2.5 rounded-xl shadow-2xl" style="display:none;z-index:70;max-width:90%"></div>
 
     <!-- Modals -->
     <div id="installModal" class="modal fixed inset-0 bg-slate-950/85 z-50 items-center justify-center p-4">
         <div class="cyber-glass border border-slate-800 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                <h3 class="font-bold text-base text-emerald-400">تثبيت التطبيق PWA</h3>
+                <h3 class="font-bold text-base text-red-400">تثبيت Mon_77 app Guard</h3>
                 <button onclick="closeModal('installModal')" class="text-slate-400 hover:text-white p-1" type="button"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">اضغط على القائمة (النقاط الثلاث) ثم اختر <b class="text-emerald-400">"تثبيت التطبيق"</b> أو <b class="text-emerald-400">"الإضافة إلى الشاشة الرئيسية"</b> لتثبيته بأيقونته الجديدة.</p>
-            <button onclick="closeModal('installModal')" class="w-full py-2.5 bg-emerald-600 rounded-xl text-xs font-bold text-white shadow" type="button">حسناً</button>
+            <p class="text-xs text-slate-300 leading-relaxed">اضغط على القائمة (النقاط الثلاث) في أعلى المتصفح ثم اختر <b class="text-emerald-400">"تثبيت التطبيق" (Install App)</b> أو <b class="text-emerald-400">"الإضافة إلى الشاشة الرئيسية"</b>.</p>
+            <button id="installNow" onclick="installApp()" class="w-full py-2.5 bg-emerald-600 rounded-xl text-xs font-bold text-white shadow" type="button" style="display:none">تثبيت التطبيق الآن</button>
+            <button onclick="closeModal('installModal')" class="w-full py-2.5 bg-red-600 rounded-xl text-xs font-bold text-white shadow" type="button">حسناً</button>
         </div>
     </div>
 
@@ -202,7 +230,7 @@
                 <h3 class="font-bold text-base text-indigo-400">الدرع الخاشع وقفل النوم</h3>
                 <button onclick="closeModal('nightModal')" class="text-slate-400 hover:text-white p-1" type="button"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">يُنصح بإغلاق الهاتف قبل النوم لتجنب الضوء الأزرق الضار.<br><br><b>أذكار النوم:</b> باسمك ربي وضعت جنبي وبك أرفعه...</p>
+            <p class="text-xs text-slate-300 leading-relaxed">يُنصح بإغلاق الهاتف قبل النوم لساعة لتجنب الضوء الأزرق.<br><br><b>أذكار النوم:</b> "بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي وَبِكَ أَرْفَعُهُ..."</p>
             <button onclick="closeModal('nightModal')" class="w-full py-2.5 bg-indigo-600 rounded-xl text-xs font-bold text-white shadow" type="button">إغلاق</button>
         </div>
     </div>
@@ -210,12 +238,11 @@
     <div id="journalModal" class="modal fixed inset-0 bg-slate-950/85 z-50 items-center justify-center p-4">
         <div class="cyber-glass border border-purple-500/40 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                <h3 class="font-bold text-base text-purple-400">دفتر المحاسبة والعهود</h3>
+                <h3 class="font-bold text-base text-purple-400">دفتر المحاسبة والاستغفار</h3>
                 <button onclick="closeModal('journalModal')" class="text-slate-400 hover:text-white p-1" type="button"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             <textarea id="journalNote" rows="3" placeholder="اكتب عهدك مع نفسك اليوم..." class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-purple-500"></textarea>
-            <button onclick="saveJournalNote()" type="button" class="w-full py-2 bg-purple-600 rounded-xl text-xs font-bold text-white shadow">حفظ السجل محلياً</button>
-            <div id="journalHistory" class="text-[11px] text-slate-400 max-h-32 overflow-y-auto space-y-1"></div>
+            <button onclick="saveJournalNote()" type="button" class="w-full py-2 bg-purple-600 rounded-xl text-xs font-bold text-white shadow">حفظ محلياً</button>
         </div>
     </div>
 
@@ -225,162 +252,401 @@
                 <h3 class="font-bold text-base text-teal-400">صحة العين والراحة العقلية</h3>
                 <button onclick="closeModal('healthModal')" class="text-slate-400 hover:text-white p-1" type="button"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed">قاعدة 20-20-20: كل 20 دقيقة انظر إلى شيء يبعد 20 قدماً لمدة 20 ثانية لتخفيف إجهاد العين.</p>
-            <button onclick="closeModal('healthModal')" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 rounded-xl text-xs font-bold text-white shadow" type="button">فهمت</button>
+            <ul class="text-xs text-slate-300 leading-relaxed list-disc pr-4 space-y-1">
+                <li>كل 20 دقيقة انظر بعيداً 20 ثانية (استراحة قصيرة تخفف الإجهاد).</li>
+                <li>ارمش ببطء عدة مرات؛ نرمش أقل أمام الشاشات.</li>
+                <li>الضوء الطبيعي الخارجي مفيد للعين، خاصة للأطفال.</li>
+                <li>نظارات الضوء الأزرق لم تُثبت دراسات فائدتها للإجهاد.</li>
+            </ul>
+            <div id="eyeTimer" class="text-center text-3xl font-black text-teal-300">20</div>
+            <button onclick="startEyeBreak()" type="button" class="w-full py-2.5 bg-teal-600 rounded-xl text-xs font-bold text-white shadow">ابدأ استراحة العين الآن</button>
         </div>
     </div>
 
-    <!-- استدعاء آلة الحالة والربط البرمجي الكامل -->
-    <script src="GuardStateMachine.js"></script>
+    <!-- لحظة ضعف -->
+    <div id="sosModal" class="modal fixed inset-0 bg-slate-950/95 z-50 items-center justify-center p-4 overflow-y-auto">
+        <div class="cyber-glass border border-red-500/40 rounded-3xl max-w-sm w-full p-5 space-y-3 shadow-2xl text-center">
+            <h3 class="font-black text-lg text-red-400">توقّف… هذه موجة وستمرّ</h3>
+            <div class="mx-auto w-28 h-28 rounded-full bg-emerald-500/20 border-2 border-emerald-400/60 flex items-center justify-center breath"><span id="breathLbl" class="text-sm font-bold text-emerald-200">شهيق</span></div>
+            <div class="text-xs text-slate-300">الرغبة تعلو ثم تهبط، وغالباً تخف خلال 20 إلى 30 دقيقة. راقبها ولا تحاربها.</div>
+            <div id="sosTimer" class="text-3xl font-black text-amber-400">20:00</div>
+            <div id="sosMsg" class="text-sm text-slate-100 leading-relaxed bg-slate-950/60 border border-slate-800 rounded-xl p-3"></div>
+            <ul class="text-xs text-slate-300 text-right list-disc pr-4 space-y-1">
+                <li>غيّر مكانك الآن: قم، توضأ، اخرج لمكان مفتوح.</li>
+                <li>كلّم شخصاً تثق به أو اكتب ما تشعر به.</li>
+                <li>ابعد الهاتف عن يدك وعن سريرك.</li>
+            </ul>
+            <button onclick="surviveSOS()" type="button" class="w-full py-2.5 bg-emerald-600 rounded-xl text-xs font-bold text-white">عبرتُ اللحظة ✅</button>
+            <button onclick="closeSOS()" type="button" class="w-full py-2 bg-slate-800 rounded-xl text-xs text-slate-300 border border-slate-700">إغلاق</button>
+            <p class="text-[10px] text-slate-500">إن كنت تمرّ بأزمة نفسية حادة أو تفكر بإيذاء نفسك فتواصل مع مختص أو مع شخص قريب فوراً.</p>
+        </div>
+    </div>
+
+    <!-- شريط التذكير -->
+    <div id="reminder" class="fixed inset-x-3 top-3 cyber-glass border border-emerald-500/50 rounded-2xl p-4 shadow-2xl" style="display:none;z-index:55">
+        <div class="flex justify-between items-start gap-2">
+            <div class="text-[11px] font-bold text-emerald-300" id="remCat"></div>
+            <button onclick="hideReminder()" type="button" class="text-slate-400 p-0.5"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="remText" class="text-sm text-slate-100 leading-relaxed mt-1"></div>
+        <div id="remSrc" class="text-[10px] text-slate-400 mt-1"></div>
+    </div>
+
+    <!-- دوال JavaScript المباشرة -->
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js').catch(() => {});
+        const KEY = "m77_state_v1";
+        const DONE = true; // علامة: المعالج تولّى إغلاق/فتح النافذة بنفسه
+        const FAITH = [
+            ["«أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ»", "الرعد: 28"],
+            ["«قُلْ لِلْمُؤْمِنِينَ يَغُضُّوا مِنْ أَبْصَارِهِمْ وَيَحْفَظُوا فُرُوجَهُمْ ۚ ذَٰلِكَ أَزْكَىٰ لَهُمْ»", "النور: 30"],
+            ["«وَمَنْ يَتَّقِ اللَّهَ يَجْعَلْ لَهُ مَخْرَجًا»", "الطلاق: 2"],
+            ["«إِنَّ اللَّهَ مَعَ الصَّابِرِينَ»", "البقرة: 153"],
+            ["«أَلَمْ يَعْلَمْ بِأَنَّ اللَّهَ يَرَىٰ»", "العلق: 14"],
+            ["«إِنَّ السَّمْعَ وَالْبَصَرَ وَالْفُؤَادَ كُلُّ أُولَٰئِكَ كَانَ عَنْهُ مَسْئُولًا»", "الإسراء: 36"],
+            ["«وَالَّذِينَ جَاهَدُوا فِينَا لَنَهْدِيَنَّهُمْ سُبُلَنَا»", "العنكبوت: 69"],
+            ["«قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ»", "الزمر: 53"],
+            ["«اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ، وَأَتْبِعِ السَّيِّئَةَ الْحَسَنَةَ تَمْحُهَا»", "رواه الترمذي"],
+            ["«نِعْمَتَانِ مَغْبُونٌ فِيهِمَا كَثِيرٌ مِنَ النَّاسِ: الصِّحَّةُ وَالْفَرَاغُ»", "رواه البخاري"],
+            ["«التَّائِبُ مِنَ الذَّنْبِ كَمَنْ لَا ذَنْبَ لَهُ»", "رواه ابن ماجه"],
+            ["«كُلُّ ابْنِ آدَمَ خَطَّاءٌ، وَخَيْرُ الْخَطَّائِينَ التَّوَّابُونَ»", "رواه الترمذي"]
+        ];
+        const EYE = [
+            ["ارفع عينيك عن الشاشة الآن 20 ثانية وانظر إلى أبعد نقطة تراها؛ استراحة قصيرة تخفف إجهاد العين.", ""],
+            ["نرمش أقل أمام الشاشة فتجف العين. ارمش ببطء عشر مرات الآن.", ""],
+            ["أبعد الهاتف عن وجهك بنحو 30 إلى 40 سم، وخفّض السطوع ليناسب إضاءة المكان.", ""],
+            ["الجلوس في الضوء الطبيعي الخارجي مفيد للعين، وهو من أقوى ما يُنصح به لحماية بصر الأطفال والمراهقين.", ""],
+            ["لا تتصفح في غرفة مظلمة؛ ضوء الشاشة في الظلام يتعب العين ويؤخر النوم.", ""],
+            ["قم الآن وحرّك جسمك واشرب ماءً؛ الجلوس الطويل أمام الشاشة يتعب العين والرقبة.", ""],
+            ["نظارات الضوء الأزرق لم تُثبت دراسات محكّمة فائدتها في تقليل إجهاد العين؛ الأنفع هو الاستراحات وضبط الإضاءة.", ""],
+            ["إن تكرر الصداع أو ضبابية الرؤية فاستشر طبيب العيون؛ لا تكتفِ بالتطبيقات.", ""]
+        ];
+        const MIND = [
+            ["الرغبة موجة: تعلو ثم تهبط، وغالباً تخف خلال 20 إلى 30 دقيقة. لا تحاربها، راقبها حتى تمرّ.", ""],
+            ["تنفّس ببطء: شهيق 4 ثوانٍ ثم زفير 6 ثوانٍ لمدة دقيقة كاملة.", ""],
+            ["بدّل مكانك فوراً: قم، توضأ، اخرج لمكان مفتوح. تغيير البيئة يقطع الحلقة.", ""],
+            ["الحركة والرياضة تخفف الاعتماد على الجوال في مراجعات علمية حديثة؛ امشِ ولو 10 دقائق.", ""],
+            ["أبعد الهاتف عن سريرك ليلاً؛ أصعب لحظات الضعف تأتي مع الوحدة والتعب.", ""],
+            ["كلّم صديقاً تثق به الآن؛ الوحدة أكبر وقود للعودة إلى العادة.", ""],
+            ["اسأل نفسك: ماذا أحتاج حقاً الآن؟ راحة؟ تواصلاً؟ حركة؟ الملل والتوتر هما مفتاح العادة.", ""],
+            ["التعثر لا يلغي أيامك: تب وابدأ فوراً ولا تجلد نفسك.", ""],
+            ["حوّل شاشتك إلى الأبيض والأسود؛ تجارب ميدانية وجدت أنه يقلل وقت الشاشة.", ""],
+            ["أغلق الإشعارات غير الضرورية؛ كل إشعار دعوة لفتح الهاتف.", ""]
+        ];
+        const PATTERN = [["إيمان", FAITH], ["صحة العين", EYE], ["إيمان", FAITH], ["راحة العقل", MIND]];
+        const lastPick = {};
+        function pick(pool, key) {
+            let i; do { i = Math.floor(Math.random() * pool.length); } while (pool.length > 1 && i === lastPick[key]);
+            lastPick[key] = i; return pool[i];
+        }
+        const $ = (id) => document.getElementById(id);
+
+        /* ---------- الحالة (محفوظة، فلا تضيع بتحديث الصفحة) ---------- */
+        function loadState() {
+            let s = {};
+            try { s = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { s = {}; }
+            if (![15, 30, 45, 60].includes(s.limit)) s.limit = 30;
+            s.locked = !!s.locked;
+            s.fails = s.fails || 0;
+            s.lockUntil = s.lockUntil || 0;
+            if (![0, 10, 20, 30, 60].includes(s.remindEvery)) s.remindEvery = 30;
+            s.rIdx = s.rIdx || 0; s.nextRemind = s.nextRemind || 0; s.survived = s.survived || 0;
+            if (!s.startDate) s.startDate = Date.now();
+            const now = Date.now();
+            // جلسة قديمة جداً (غاب المستخدم أكثر من مدة كاملة بعد انتهائها): نبدأ من جديد
+            if (typeof s.endAt !== "number" || (!s.locked && now - s.endAt > s.limit * 60000)) {
+                s.endAt = now + s.limit * 60000;
+            }
+            return s;
+        }
+        let state = loadState();
+        function saveState() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+        /* ---------- واجهة مساعدة ---------- */
+        let toastTimer = null;
+        function toast(msg) {
+            const t = $("toast");
+            t.innerText = msg;
+            t.style.display = "block";
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => { t.style.display = "none"; }, 3200);
+        }
+        function openModal(id) { $(id).classList.add("active"); }
+        function closeModal(id) { $(id).classList.remove("active"); }
+
+        function changeTip() {
+            const m = pick(Math.random() < 0.5 ? FAITH : (Math.random() < 0.5 ? EYE : MIND), "tip");
+            $("tipContainer").innerText = m[0];
+            $("tipSource").innerText = m[1];
+        }
+
+        /* ---------- المؤقت (يعتمد على الوقت الفعلي لا على عدّاد قابل للتجميد) ---------- */
+        function fmt(ms) {
+            const total = Math.max(0, Math.ceil(ms / 1000));
+            const m = Math.floor(total / 60), s = total % 60;
+            return (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
+        }
+        function tick() {
+            if (state.locked) { $("countdownDisplay").innerText = "00:00"; return; }
+            const left = state.endAt - Date.now();
+            if (left <= 0) { activateSafeMode(false); return; }
+            $("countdownDisplay").innerText = fmt(left);
+        }
+        setInterval(tick, 1000);
+        document.addEventListener("visibilitychange", tick);
+
+        function activateSafeMode(manual) {
+            if (manual && !state.pinHash) {
+                toast("لم تضع رمز PIN بعد؛ سيُلغى القفل بدون رمز. أنشئ PIN أولاً لحماية الوضع.");
+            }
+            state.locked = true;
+            saveState();
+            openModal("safeModeScreen");
+            tick();
+        }
+        function finishUnlock() {
+            state.locked = false;
+            state.endAt = Date.now() + state.limit * 60000; // يعيد تشغيل المؤقت فعلاً
+            saveState();
+            closeModal("safeModeScreen");
+            tick();
+            toast("🔓 تم فتح القفل وتجديد الوقت.");
+        }
+
+        /* ---------- PIN: تجزئة مملّحة + حد للمحاولات ---------- */
+        function newSalt() {
+            const a = new Uint8Array(16);
+            if (window.crypto && crypto.getRandomValues) crypto.getRandomValues(a);
+            else for (let i = 0; i < 16; i++) a[i] = Math.floor(Math.random() * 256);
+            return Array.from(a).map(b => b.toString(16).padStart(2, "0")).join("");
+        }
+        async function hashPin(pin, salt) {
+            if (window.crypto && crypto.subtle) {
+                const enc = new TextEncoder();
+                const key = await crypto.subtle.importKey("raw", enc.encode(pin), "PBKDF2", false, ["deriveBits"]);
+                const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", salt: enc.encode(salt), iterations: 100000, hash: "SHA-256" }, key, 256);
+                return Array.from(new Uint8Array(bits)).map(b => b.toString(16).padStart(2, "0")).join("");
+            }
+            // احتياط للمتصفحات/السياقات غير الآمنة (مثل file://): تجزئة أضعف
+            let h = 5381; const s = salt + ":" + pin;
+            for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+            return "f" + (h >>> 0).toString(16);
+        }
+        async function checkPin(v) {
+            const now = Date.now();
+            if (state.lockUntil > now) return "محاولات كثيرة. انتظر " + Math.ceil((state.lockUntil - now) / 1000) + " ثانية.";
+            if ((await hashPin(v, state.salt)) === state.pinHash) {
+                state.fails = 0; state.lockUntil = 0; saveState();
+                return null;
+            }
+            state.fails++;
+            if (state.fails >= 5) {
+                state.fails = 0; state.lockUntil = now + 60000; saveState();
+                return "5 محاولات خاطئة. تم الإيقاف لمدة دقيقة.";
+            }
+            saveState();
+            return "رمز PIN غير صحيح (المحاولة " + state.fails + " من 5).";
+        }
+
+        let pinHandler = null;
+        function openPin(title, handler) {
+            $("pinTitle").innerText = title;
+            $("pinInput").value = "";
+            $("pinErr").innerText = "";
+            pinHandler = handler;
+            openModal("pinModal");
+            setTimeout(() => $("pinInput").focus(), 60);
+        }
+        function closePin() { closeModal("pinModal"); pinHandler = null; }
+        async function pinSubmit() {
+            const v = $("pinInput").value.trim();
+            if (!/^\d{4,8}$/.test(v)) { $("pinErr").innerText = "الرمز من 4 إلى 8 أرقام."; return; }
+            if (!pinHandler) return;
+            const r = await pinHandler(v);
+            if (typeof r === "string") { $("pinErr").innerText = r; $("pinInput").value = ""; }
+            else if (r === null) closePin();
+            // r === DONE: المعالج أدار النافذة بنفسه
+        }
+        // إن لم يوجد PIN ننفّذ مباشرة، وإلا نطلبه ثم ننفّذ
+        function requirePin(title, onOk) {
+            if (!state.pinHash) { onOk(); return; }
+            openPin(title, async (v) => {
+                const e = await checkPin(v);
+                if (e) return e;
+                closePin();
+                onOk();
+                return DONE;
             });
         }
 
-        // تهيئة محرك آلة الحالة GuardStateMachine
-        const guardEngine = new GuardStateMachine({
-            dailyLimitMinutes: 30,
-            maxDailyGraces: 2,
-            defaultGraceMinutes: 10
-        });
-
-        // ربط التحديث اللحظي للعدادات والوضع الآمن
-        guardEngine.onTickCallback = function(status) {
-            document.getElementById("countdownDisplay").innerText = status.formattedRemaining;
-            document.getElementById("gracesLeftLabel").innerText = `${status.gracesLeftToday} من 2`;
-
-            const statusBadge = document.getElementById("timerStatusBadge");
-            const countdownLabel = document.getElementById("countdownLabel");
-
-            if (status.state === 'GRACE') {
-                statusBadge.className = "text-[11px] font-bold bg-amber-500/20 text-amber-400 px-2.5 py-1 rounded-full border border-amber-500/30";
-                statusBadge.innerText = "مهلة نشطة";
-                countdownLabel.innerText = "الوقت المتبقي للمهلة الاستثنائية:";
-            } else if (status.state === 'RESTRICTED') {
-                statusBadge.className = "text-[11px] font-bold bg-red-500/20 text-red-400 px-2.5 py-1 rounded-full border border-red-500/30";
-                statusBadge.innerText = "مقيّد (الوضع الآمن)";
-                countdownLabel.innerText = "انتهى الوقت المسموح به:";
-            } else {
-                statusBadge.className = "text-[11px] font-bold bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/30";
-                statusBadge.innerText = "نشط الآن";
-                countdownLabel.innerText = "الاستخدام المتبقي لليوم:";
-            }
-
-            if (status.isRestricted) {
-                document.getElementById("safeModeScreen").classList.add("active");
-            } else {
-                document.getElementById("safeModeScreen").classList.remove("active");
-            }
-        };
-
-        function handleRequestGrace() {
-            const reason = prompt("ما هو السبب الطارئ لطلب مهلة إضافية؟");
-            if (reason !== null) {
-                const res = guardEngine.requestGracePeriod(10, reason);
-                alert(res.message);
-            }
-        }
-
-        let savedPin = localStorage.getItem("mon_pin") || "1234";
-
         function setPinCode() {
-            let oldP = prompt("أدخل رمز PIN الحالي:");
-            if (oldP === savedPin) {
-                let newP = prompt("أدخل رمز PIN الجديد:");
-                if (newP && newP.length >= 4) {
-                    savedPin = newP;
-                    localStorage.setItem("mon_pin", newP);
-                    alert("✅ تم تغيير رمز PIN بنجاح!");
-                } else {
-                    alert("❌ الرمز الجديد قصير جداً.");
-                }
-            } else if (oldP !== null) {
-                alert("❌ رمز PIN الحالي غير صحيح!");
-            }
+            const create = () => openPin("أدخل رمز PIN جديد (4 إلى 8 أرقام)", async (v1) => {
+                closePin();
+                setTimeout(() => openPin("أعد إدخال الرمز للتأكيد", async (v2) => {
+                    if (v2 !== v1) return "الرمزان غير متطابقين. حاول مجدداً.";
+                    state.salt = newSalt();
+                    state.pinHash = await hashPin(v2, state.salt);
+                    state.fails = 0; state.lockUntil = 0;
+                    saveState();
+                    toast("✅ تم حفظ رمز PIN بنجاح.");
+                    return null;
+                }), 0);
+                return DONE;
+            });
+            requirePin("أدخل رمز PIN الحالي للمتابعة", create);
         }
-
         function unlockPinCode() {
-            let p = prompt("أدخل رمز PIN لإلغاء قفل الوضع الآمن مباشرة:");
-            if (p === savedPin) {
-                document.getElementById("safeModeScreen").classList.remove("active");
-                guardEngine.requestGracePeriod(15, "إلغاء قفل مباشر بواسطة PIN");
-                alert("🔓 تم فتح القفل ومنح مهلة استثنائية بنجاح!");
-            } else if (p !== null) {
-                alert("❌ رمز PIN غير صحيح!");
-            }
+            if (!state.pinHash) { finishUnlock(); return; }
+            openPin("أدخل رمز PIN لإلغاء قفل الوضع الآمن", async (v) => {
+                const e = await checkPin(v);
+                if (e) return e;
+                closePin();
+                finishUnlock();
+                return DONE;
+            });
+        }
+        function updateTimeLimit() {
+            const sel = $("timeSelect");
+            const wanted = parseInt(sel.value, 10);
+            sel.value = String(state.limit); // نعيد القيمة حتى يُصرَّح بالتغيير
+            requirePin("أدخل رمز PIN لتغيير حد الاستخدام", () => {
+                state.limit = wanted;
+                state.endAt = Date.now() + wanted * 60000;
+                saveState();
+                sel.value = String(wanted);
+                tick();
+                toast("تم ضبط الحد على " + wanted + " دقيقة.");
+            });
         }
 
-        const tips = [
-            "إن الله يراقبك في السر والعلن؛ فاجعل هاتفك شاهداً لك لا عليك، وغض بصرك عما لا يرضيه.",
-            "صحة عينيك نعمَة؛ اتبع قاعدة (20-20-20) وأرح بصرك باستمرار أثناء التصفح.",
-            "الحفاظ على الأخلاق والرفعة يبدأ من السيطرة على النفس واختيار ما تنظر إليه بحكمة.",
-            "عقلك كنز ثمين؛ لا ترهقه بكثرة التشتت والتصفح السلبي، واجعله ينبض بالنافع والمفيد.",
-            "ومن يتق الله يجعل له مخرجا؛ التقوى هي الحصن الأمني الأقوى في العالم الرقمي."
-        ];
-
-        let tipIdx = 0;
-        function changeTip() {
-            tipIdx = (tipIdx + 1) % tips.length;
-            document.getElementById("tipContainer").innerText = tips[tipIdx];
-        }
-
-        function openModal(id) {
-            document.getElementById(id).classList.add("active");
-            if(id === 'journalModal') loadJournalHistory();
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.remove("active");
-        }
-
+        /* ---------- بقية الميزات ---------- */
         function shareApp() {
-            if(navigator.share) {
-                navigator.share({title: 'Mon_77 Guard', text: 'تطبيق حارس: يحمي جهازك، ويصون خصوصيتك، ويعينك على حماية نفسك', url: window.location.href}).catch(()=>{});
+            if (navigator.share) {
+                navigator.share({ title: "Mon_77 Guard", text: "تطبيق حماية الرفاهية والأخلاق والدرع الخاشع", url: window.location.href }).catch(() => {});
             } else {
-                alert("رابط التطبيق جاهز للمشاركة!");
+                toast("انسخ رابط الصفحة من شريط العنوان وشاركه.");
             }
         }
-
         function saveJournalNote() {
-            let note = document.getElementById("journalNote").value.trim();
-            if(note) {
-                let notes = JSON.parse(localStorage.getItem("mon_journals") || "[]");
-                notes.unshift({text: note, date: new Date().toLocaleString('ar-EG')});
-                localStorage.setItem("mon_journals", JSON.stringify(notes));
-                document.getElementById("journalNote").value = "";
-                loadJournalHistory();
-                alert("✅ تم حفظ العهد في دفتر المحاسبة!");
+            const note = $("journalNote").value;
+            if (note) {
+                try { localStorage.setItem("note", note); } catch (e) {}
+                toast("✅ تم الحفظ في دفتر المحاسبة على هذا الهاتف.");
+                closeModal("journalModal");
             }
         }
-
-        function loadJournalHistory() {
-            let container = document.getElementById("journalHistory");
-            let notes = JSON.parse(localStorage.getItem("mon_journals") || "[]");
-            container.innerHTML = notes.map(n => `<div class="p-2 bg-slate-900 rounded-lg border border-slate-800 mb-1"><b>${n.date}:</b> ${n.text}</div>`).join('');
-        }
-
         function checkDomain() {
-            let val = document.getElementById("checkInput").value.trim().toLowerCase();
-            let res = document.getElementById("checkResult");
+            const val = $("checkInput").value.trim().toLowerCase();
+            const res = $("checkResult");
             res.classList.remove("hidden");
-            if(!val) {
+            if (!val) {
                 res.className = "text-xs p-3 rounded-xl border bg-amber-950 text-amber-300";
-                res.innerHTML = "⚠️ أدخل نطاقاً صحيحاً لفحصه.";
+                res.innerText = "⚠️ أدخل رابطاً صحيحاً لفحصه.";
                 return;
             }
-            let blockedKeywords = ['porn', 'xxx', 'sex', 'adult', 'nsfw', 'pata', '18+', 'gambling', 'bet'];
-            let isDangerous = blockedKeywords.some(w => val.includes(w));
-
-            if(isDangerous) {
+            if (["porn", "xxx", "sex", "adult"].some(w => val.includes(w))) {
                 res.className = "text-xs p-3 rounded-xl border bg-red-950 text-red-200 shield-glow";
-                res.innerHTML = "🛡️ تحذير درع Mon_77: تم رصد محتوى خطير أو محظور وتم تفعيل الحماية!";
+                res.innerText = "🛡️ تحذير درع Mon_77: محتوى محظور وخطير جداً!";
             } else {
                 res.className = "text-xs p-3 rounded-xl border bg-emerald-950 text-emerald-200";
-                res.innerHTML = "✅ النطاق آمن ونظيف، ودرع الخصوصية نشط لحمايتك.";
+                res.innerText = "ℹ️ لا مؤشرات ظاهرة في هذا الفحص المبسّط، لكنه لا يضمن سلامة الرابط.";
             }
         }
+
+        /* ---------- التذكيرات (إيمان وصحة العين والعقل) ---------- */
+        let remTimer = null, swReg = null;
+        function showReminder() {
+            const [cat, pool] = PATTERN[state.rIdx % PATTERN.length];
+            state.rIdx++; saveState();
+            const m = pick(pool, cat);
+            $("remCat").innerText = (cat === "إيمان" ? "🌙 " : cat === "صحة العين" ? "👁️ " : "🧠 ") + cat;
+            $("remText").innerText = m[0]; $("remSrc").innerText = m[1];
+            $("reminder").style.display = "block";
+            clearTimeout(remTimer); remTimer = setTimeout(hideReminder, 30000);
+            if (document.hidden && "Notification" in window && Notification.permission === "granted" && swReg) {
+                swReg.showNotification("Mon_77 Guard — " + cat, { body: m[0], icon: "icon-192.png", tag: "m77-reminder" });
+            }
+        }
+        function hideReminder() { $("reminder").style.display = "none"; }
+        function remindTick() {
+            if (!state.remindEvery) return;
+            const now = Date.now();
+            if (!state.nextRemind) { state.nextRemind = now + state.remindEvery * 60000; saveState(); return; }
+            if (now >= state.nextRemind) { state.nextRemind = now + state.remindEvery * 60000; saveState(); showReminder(); }
+        }
+        function setRemind() {
+            state.remindEvery = parseInt($("remindSelect").value, 10);
+            state.nextRemind = state.remindEvery ? Date.now() + state.remindEvery * 60000 : 0;
+            saveState();
+            toast(state.remindEvery ? "سيصلك تذكير كل " + state.remindEvery + " دقيقة." : "تم إيقاف التذكير التلقائي.");
+        }
+        function enableNotif() {
+            if (!("Notification" in window)) { toast("المتصفح لا يدعم الإشعارات."); return; }
+            Notification.requestPermission().then(p => toast(p === "granted" ? "تم السماح. قد يوقفها النظام إن أُغلق التطبيق." : "لم يُسمح بالإشعارات."));
+        }
+        setInterval(remindTick, 15000);
+
+        /* ---------- استراحة العين ---------- */
+        let eyeInt = null;
+        function startEyeBreak() {
+            let n = 20; $("eyeTimer").innerText = n;
+            clearInterval(eyeInt);
+            eyeInt = setInterval(() => {
+                n--; $("eyeTimer").innerText = n > 0 ? n : "✓";
+                if (n <= 0) { clearInterval(eyeInt); toast("أحسنت! عينك ارتاحت. ارمش ببطء قليلاً."); }
+            }, 1000);
+        }
+
+        /* ---------- لحظة ضعف: تنفس وركوب الموجة ---------- */
+        let sosInt = null, breathT = null, sosLeft = 1200;
+        function openSOS() {
+            sosLeft = 1200; $("sosMsg").innerText = pick(FAITH, "sos")[0];
+            openModal("sosModal");
+            const draw = () => { $("sosTimer").innerText = fmt(sosLeft * 1000); };
+            draw(); clearInterval(sosInt);
+            sosInt = setInterval(() => { sosLeft = Math.max(0, sosLeft - 1); draw(); }, 1000);
+            const cycle = () => {
+                $("breathLbl").innerText = "شهيق";
+                breathT = setTimeout(() => { $("breathLbl").innerText = "زفير"; breathT = setTimeout(cycle, 6000); }, 4000);
+            };
+            clearTimeout(breathT); cycle();
+        }
+        function closeSOS() { clearInterval(sosInt); clearTimeout(breathT); closeModal("sosModal"); }
+        function surviveSOS() {
+            state.survived++; saveState(); renderStats(); closeSOS();
+            toast("🌟 أحسنت! كل لحظة تعبرها تقوّي إرادتك.");
+        }
+
+        /* ---------- سلسلة الالتزام ---------- */
+        function renderStats() {
+            $("streakDays").innerText = Math.floor((Date.now() - state.startDate) / 86400000);
+            $("survivedCount").innerText = state.survived;
+        }
+        function resetStreak() {
+            requirePin("أدخل رمز PIN لإعادة العدّاد", () => {
+                state.startDate = Date.now(); saveState(); renderStats();
+                toast("بدأت من جديد. «التائب من الذنب كمن لا ذنب له».");
+            });
+        }
+
+        /* ---------- التثبيت والعمل دون إنترنت ---------- */
+        let installEvt = null;
+        window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); installEvt = e; $("installNow").style.display = "block"; });
+        window.addEventListener("appinstalled", () => { installEvt = null; $("installNow").style.display = "none"; toast("تم تثبيت التطبيق ✅"); });
+        function installApp() {
+            if (!installEvt) { toast("استخدم قائمة المتصفح ⋮ ثم «تثبيت التطبيق»."); return; }
+            installEvt.prompt(); installEvt.userChoice.finally(() => { installEvt = null; $("installNow").style.display = "none"; });
+        }
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").then(r => { swReg = r; }).catch(() => {}));
+        }
+
+        /* ---------- تشغيل أولي ---------- */
+        $("timeSelect").value = String(state.limit);
+        try { $("journalNote").value = localStorage.getItem("note") || ""; } catch (e) {}
+        if (state.locked) openModal("safeModeScreen");
+        $("remindSelect").value = String(state.remindEvery);
+        changeTip(); renderStats();
+        tick();
     </script>
 </body>
 </html>
